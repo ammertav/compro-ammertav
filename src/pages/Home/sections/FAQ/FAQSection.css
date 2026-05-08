@@ -1,0 +1,157 @@
+.faq-section {
+  width: 100%;
+  padding: 120px 8%;
+  background: #040414;
+  overflow: hidden;
+}
+
+.faq-container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* HEADER */
+
+.faq-header {
+  text-align: left;
+  margin-bottom: 70px;
+}
+
+.faq-tag {
+  display: inline-block;
+  color: #ff00ff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.faq-title {
+  color: white;
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.faq-description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  max-width: 900px;
+  font-size: 15px;
+}
+
+/* CONTENT */
+
+.faq-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+/* LEFT */
+
+.faq-left {
+  flex: 1.2;
+}
+
+/* FAQ LIST */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.faq-item:hover {
+  border-color: rgba(255, 0, 255, 0.4);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+
+  background: transparent;
+  border: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-icon {
+  font-size: 24px;
+}
+
+.faq-answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+
+  transition: all 0.4s ease;
+}
+
+.faq-answer-wrapper.show {
+  max-height: 300px;
+}
+
+.faq-answer {
+  padding: 0 24px 24px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+}
+
+/* RIGHT */
+
+.faq-right {
+  flex: 0.8;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-image {
+  width: 100%;
+  max-width: 420px;
+  object-fit: contain;
+
+  filter: drop-shadow(0 0 45px rgba(140, 0, 255, 0.5));
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+  .faq-header {
+    text-align: center;
+  }
+
+  .faq-description {
+    margin: auto;
+  }
+
+  .faq-content {
+    flex-direction: column;
+  }
+
+  .faq-right {
+    order: -1;
+  }
+}

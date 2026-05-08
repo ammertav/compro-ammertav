@@ -1,0 +1,49 @@
+/* CARD */
+.service-card {
+  display: flex;
+  justify-content: space-between;
+  
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+
+  padding: 18px 20px;
+  border-radius: 16px;
+
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+/* IMAGE (LEFT) */
+.service-image {
+  flex-shrink: 0; /* biar tidak mengecil */
+}
+
+.service-image img {
+  width: 48px;
+  
+  object-fit: contain;
+  flex-shrink: 0;
+
+  /* optional glow */
+  filter: drop-shadow(0 0 8px rgba(157, 78, 221, 0.5));
+}
+
+/* TEXT (RIGHT) */
+.service-card h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.service-card p {
+  font-size: 13px;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.service-content{
+  text-align: right;
+}

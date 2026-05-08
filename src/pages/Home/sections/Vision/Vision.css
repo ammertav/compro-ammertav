@@ -1,0 +1,21 @@
+.vision {
+  position: relative;
+  z-index: 2; /* samakan dengan hero content */
+
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+}
+
+.vision-sub {
+  letter-spacing: 6px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.vision h2 {
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 28px;
+}

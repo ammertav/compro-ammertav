@@ -1,0 +1,153 @@
+.about  {
+  position: relative;
+  padding: 100px 80px;
+  color: white;
+
+  /* 🔥 BASE + IMAGE */
+  background-color: #040414;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  
+}
+
+/* 🔥 OVERLAY (biar teks kebaca) */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 4, 20, 0.75);
+  z-index: 0;
+}
+
+/* biar konten di atas overlay */
+.about-container,
+.about-cards {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================= */
+/* LAYOUT */
+/* ========================= */
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.about-left{
+    flex: 0.8;
+}
+.about-right {
+  flex: 1.2;
+}
+
+/* ========================= */
+/* IMAGE */
+/* ========================= */
+
+.about-image-wrapper {
+  
+  padding: 20px;
+  margin-left: 70px;
+  border-radius: 12px;
+  display: inline-block;
+  
+}
+
+.about-image-wrapper img {
+  width: 240px;
+  
+}
+
+/* ========================= */
+/* TEXT */
+/* ========================= */
+
+.about-subtitle {
+    position: relative;
+  letter-spacing: 4px;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.about-subtitle-our {
+  position: relative;
+  letter-spacing: 4px;
+  font-size: 14px;
+  z-index: 1;
+  text-align: center;
+}
+
+.about-subtitle-our span {
+    color: #EF00FC;
+}
+
+.about-subtitle span {
+  color: #EF00FC;
+}
+
+.about-title {
+  font-size: 34px;
+  margin: 10px 0;
+}
+
+.about-desc {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.about-highlight {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.about-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #6a00ff, #ff00ff);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.about-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+.card-wrapper {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center; 
+  gap: 80px;/* biar center */
+  flex-wrap: wrap;
+}
+
+
+
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .about {
+    padding: 80px 20px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
