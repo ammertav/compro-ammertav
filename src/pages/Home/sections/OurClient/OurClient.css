@@ -53,12 +53,8 @@
 
 .client-showcase-section::after {
   content: "";
-
   position: absolute;
   inset: 0;
-
-  background: rgba(4, 4, 20, 0.72);
-
   z-index: 1;
 }
 
