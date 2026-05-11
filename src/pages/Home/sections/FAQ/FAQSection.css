@@ -1,157 +1,283 @@
+/* =========================
+   DESIGN TOKENS
+========================= */
+:root {
+  --container-width: 1280px;
+  --page-padding: clamp(16px, 5vw, 80px);
+  --section-spacing: clamp(64px, 8vw, 120px);
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --accent: #ff00ff;
+
+  --radius-lg: 24px;
+  --radius-md: 18px;
+
+  --gap-sm: clamp(12px, 2vw, 18px);
+  --gap-md: clamp(20px, 3vw, 32px);
+  --gap-lg: clamp(32px, 5vw, 72px);
+
+  --transition: all 0.3s ease;
+}
+
+/* =========================
+   SECTION
+========================= */
 .faq-section {
   width: 100%;
-  padding: 120px 8%;
   background: #040414;
   overflow: hidden;
+  font-family: "Poppins", sans-serif;
+
+  padding-block: var(--section-spacing);
+  padding-inline: var(--page-padding);
 }
 
 .faq-container {
-  max-width: 1400px;
-  margin: auto;
+  width: min(100%, var(--container-width));
+  margin-inline: auto;
 }
 
-/* HEADER */
-
+/* =========================
+   HEADER
+========================= */
 .faq-header {
-  text-align: left;
-  margin-bottom: 70px;
+  margin-bottom: clamp(40px, 6vw, 80px);
+  max-width: 900px;
 }
 
 .faq-tag {
   display: inline-block;
-  color: #ff00ff;
-  font-size: 14px;
+  margin-bottom: clamp(14px, 2vw, 20px);
+
+  color: var(--accent);
+  font-size: clamp(0.72rem, 0.85vw, 1rem);
   font-weight: 700;
-  letter-spacing: 6px;
-  margin-bottom: 20px;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
 }
 
 .faq-title {
-  color: white;
-  font-size: 42px;
-  line-height: 1.1;
+  color: var(--text-primary);
+  font-size: clamp(1rem, 2.5vw, 2rem);
   font-weight: 800;
-  margin-bottom: 20px;
-  max-width: 800px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+
+  max-width: 850px;
+  margin-bottom: clamp(16px, 2vw, 24px);
 }
 
 .faq-description {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.8;
-  max-width: 900px;
-  font-size: 15px;
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: 1.5;
+  max-width: 100%;
 }
 
-/* CONTENT */
-
+/* =========================
+   CONTENT LAYOUT
+========================= */
 .faq-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  justify-content: space-between;
-  gap: 70px;
+  gap: var(--gap-lg);
 }
 
-/* LEFT */
-
+/* =========================
+   LEFT CONTENT
+========================= */
 .faq-left {
-  flex: 1.2;
+  width: 100%;
 }
-
-/* FAQ LIST */
 
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--gap-sm);
 }
 
+/* =========================
+   FAQ CARD
+========================= */
 .faq-item {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  transition: 0.3s ease;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
   overflow: hidden;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
 }
 
 .faq-item:hover {
-  border-color: rgba(255, 0, 255, 0.4);
+  border-color: rgba(255, 0, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.faq-item.active {
+  border-color: rgba(255, 0, 255, 0.45);
 }
 
 .faq-question {
   width: 100%;
-  padding: 20px 24px;
-
   background: transparent;
   border: none;
+  cursor: pointer;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 18px;
 
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
+  padding: clamp(18px, 2vw, 24px);
 
-  cursor: pointer;
   text-align: left;
+  color: var(--text-primary);
+
+  font-family: inherit;
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .faq-icon {
-  font-size: 24px;
+  flex-shrink: 0;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1;
 }
 
+/* =========================
+   ANSWER
+========================= */
 .faq-answer-wrapper {
   max-height: 0;
   overflow: hidden;
-
-  transition: all 0.4s ease;
+  transition: max-height 0.4s ease;
 }
 
 .faq-answer-wrapper.show {
-  max-height: 300px;
+  max-height: 320px;
 }
 
 .faq-answer {
-  padding: 0 24px 24px;
-  color: rgba(255, 255, 255, 0.7);
+  padding-inline: clamp(18px, 2vw, 24px);
+  padding-bottom: clamp(18px, 2vw, 24px);
+
+  color: var(--text-secondary);
+  font-size: clamp(0.92rem, 1vw, 1rem);
   line-height: 1.8;
 }
 
-/* RIGHT */
-
+/* =========================
+   RIGHT IMAGE
+========================= */
 .faq-right {
-  flex: 0.8;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .faq-image {
-  width: 100%;
-  max-width: 420px;
+  width: clamp(260px, 34vw, 460px);
+  max-width: 100%;
+  height: auto;
   object-fit: contain;
 
-  filter: drop-shadow(0 0 45px rgba(140, 0, 255, 0.5));
+  filter: drop-shadow(0 0 45px rgba(140, 0, 255, 0.45));
 }
 
-/* RESPONSIVE */
+/* =========================
+   LARGE DESKTOP 1440+
+========================= */
+@media (min-width: 1440px) {
+  .faq-content {
+    gap: 80px;
+  }
+}
 
-@media (max-width: 992px) {
+/* =========================
+   MEDIUM DESKTOP
+   1280px - 1439px
+========================= */
+@media (max-width: 1439px) {
+  .faq-content {
+    grid-template-columns: 1fr 0.85fr;
+  }
+}
+
+/* =========================
+   DESKTOP
+   1024px - 1279px
+========================= */
+@media (max-width: 1279px) {
+  .faq-content {
+    gap: clamp(28px, 4vw, 48px);
+  }
+
+  .faq-image {
+    width: clamp(260px, 32vw, 400px);
+  }
+}
+
+/* =========================
+   TABLET
+   768px - 1023px
+========================= */
+@media (max-width: 1023px) {
   .faq-header {
     text-align: center;
+    margin-inline: auto;
   }
 
   .faq-description {
-    margin: auto;
+    margin-inline: auto;
   }
 
   .faq-content {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: clamp(32px, 5vw, 48px);
   }
 
   .faq-right {
     order: -1;
+  }
+
+  .faq-image {
+    width: clamp(240px, 50vw, 360px);
+  }
+}
+
+/* =========================
+   MOBILE
+   <768px
+========================= */
+@media (max-width: 767px) {
+  .faq-section {
+    padding-inline: clamp(16px, 5vw, 24px);
+  }
+
+  .faq-question {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .faq-icon {
+    margin-top: 2px;
+  }
+
+  .faq-title {
+    max-width: 100%;
+  }
+
+  .faq-description {
+    max-width: 100%;
+  }
+
+  .faq-image {
+    width: clamp(220px, 72vw, 320px);
   }
 }

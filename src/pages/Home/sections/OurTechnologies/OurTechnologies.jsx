@@ -38,12 +38,13 @@ export default function OurTechnologies() {
                 style={{ backgroundImage: `url(${quoteBG})` }}
             >
                 <div className="quote-wp">
-                    <h2 >
-                        "The best way to predict the future is to invent it."
-                    </h2>
-                    <div className="quote-line"></div>
-                    <span className="quote-author">- Alan Kay</span>
-                    <div className="glow-arc"></div>
+                    <h2>"The best way to predict the future is to invent it."</h2>
+
+                    <div className="quote-meta">
+                        <div className="quote-line"></div>
+                        <span className="quote-author">Alan Kay</span>
+                        <div className="quote-line"></div>
+                    </div>
                 </div>
 
 
@@ -53,10 +54,10 @@ export default function OurTechnologies() {
             <div className="technology-content">
                 <div className="technology-left">
                     <p className="subtitle">
-                        OUR <span>TECHNOLOGIES</span>
+                        OUR<span> TECHNOLOGIES</span>
                     </p>
 
-                    <h2 className="title">Foundation of the Digital Future</h2>
+                    <h2 className="title-ot">Foundation of the Digital Future</h2>
 
                     <p className="description">
                         We Build Digital Solutions Using Modern Technology To Drive

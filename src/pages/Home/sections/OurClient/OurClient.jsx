@@ -48,49 +48,53 @@ const clients = [
 export default function OurClient() {
   return (
     <section className="client-showcase-section">
-      <div className="client-showcase-header">
-        <p className="client-showcase-subtitle">
-          WHY{" "}
-          <span className="client-showcase-subtitle-highlight">
-            CHOOSE US
-          </span>
-        </p>
+      <div className="client-showcase-container">
 
-        <h2 className="client-showcase-title">
-          OUR CLIENT SUCCESS STORIES!
-        </h2>
+        <div className="client-showcase-header">
+          <p className="client-showcase-subtitle">
+            WHY{" "}
+            <span className="client-showcase-subtitle-highlight">
+              CHOOSE US
+            </span>
+          </p>
 
-        <p className="client-showcase-description">
-          We are your trusted partner in innovative and reliable software development. 
-          With modern technology, expert teams, and a business-focused approach, we are ready to deliver the best digital solutions.
-        </p>
-      </div>
+          <h2 className="client-showcase-title">
+            OUR CLIENT SUCCESS STORIES!
+          </h2>
 
-      <div className="client-showcase-slider">
-        {clients.map((client) => (
-          <div className="client-showcase-wrapper" key={client.id}>
+          <p className="client-showcase-description">
+            We are your trusted partner in innovative and reliable software
+            development. With modern technology, expert teams, and a
+            business-focused approach, we are ready to deliver the best digital
+            solutions.
+          </p>
+        </div>
 
-            <div className="client-showcase-logo">
-              <img src={client.image} alt={client.title} />
-            </div>
+        <div className="client-showcase-slider">
+          {clients.map((client) => (
+            <div className="client-showcase-wrapper" key={client.id}>
+              <div className="client-showcase-logo">
+                <img src={client.image} alt={client.title} />
+              </div>
 
-            <div
-              className="client-showcase-card"
-              style={{
-                clipPath:
-                  "path('M 26,0 L 78,0 C 94,0 87,19 104,19 L 156,19 C 172,19 166,0 182,0 L 234,0 Q 260,0 260,26 L 260,220 Q 260,240 234,240 L 26,240 Q 0,240 0,220 L 0,26 Q 0,0 26,0 Z')",
-              }}
-            >
-              <div className="client-showcase-glow"></div>
+              <div
+                className="client-showcase-card"
+                style={{
+                  clipPath:
+                    "path('M 32,0 L 96,0 C 116,0 108,22 128,22 L 192,22 C 212,22 204,0 224,0 L 288,0 Q 320,0 320,32 L 320,268 Q 320,288 288,288 L 32,288 Q 0,288 0,268 L 0,32 Q 0,0 32,0 Z')",
+                }}
+              >
+                <div className="client-showcase-glow"></div>
 
-              <div className="client-showcase-content">
-                <h3>{client.title}</h3>
-                <p>{client.description}</p>
+                <div className="client-showcase-content">
+                  <h3>{client.title}</h3>
+                  <p>{client.description}</p>
+                </div>
               </div>
             </div>
+          ))}
+        </div>
 
-          </div>
-        ))}
       </div>
     </section>
   );

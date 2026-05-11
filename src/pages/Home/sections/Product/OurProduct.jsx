@@ -1,7 +1,7 @@
 import "./OurProduct.css";
 import product1 from "../../../../assets/logohriesnew.png";
 import product2 from "../../../../assets/logobeilpos.png";
-import product3 from "../../../../assets/logofunnevnew.png"
+import product3 from "../../../../assets/logofunnevnew.png";
 
 const products = [
   {
@@ -30,48 +30,54 @@ const products = [
 export default function OurProduct() {
   return (
     <section className="product-section">
-      <div className="product-header">
-        <p className="product-subtitle">OUR <span className="product-sub-bold">PRODUCT</span></p>
+      <div className="product-container">
 
-        <h2 className="product-title">
-          Your Smart Solution
-        </h2>
+        <div className="product-header">
+          <p className="product-subtitle">
+            OUR <span className="product-sub-bold">PRODUCT</span>
+          </p>
 
-        <p className="product-description">
-          We Bring You Innovative Technologies To Support Your
-          Business—From Modern POS Systems, Ticketing Solutions,
-          And CRM To Professional Websites—All In One Platform!
-        </p>
+          <h2 className="product-title">
+            Your Smart Solution
+          </h2>
 
-        <button className="read-more-btn">
-          READ MORE
-        </button>
-      </div>
+          <p className="product-description">
+            We Bring You Innovative Technologies To Support Your
+            Business—From Modern POS Systems, Ticketing Solutions,
+            And CRM To Professional Websites—All In One Platform!
+          </p>
 
-      <div className="product-slider">
-        {products.map((item, index) => (
-          <div className="product-wrapper" key={index}>
+          <button className="read-more-btn">
+            READ MORE
+          </button>
+        </div>
 
-            <div className="product-logo">
-              <img src={item.image} alt={item.title} />
-            </div>
+        <div className="product-grid">
+          {products.map((item) => (
+            <article className="product-wrapper" key={item.id}>
 
-            <div
-              className="product-card"
-              style={{
-                clipPath:
-                  "path('M 26,0 L 78,0 C 94,0 87,19 104,19 L 156,19 C 172,19 166,0 182,0 L 234,0 Q 260,0 260,26 L 260,220 Q 260,240 234,240 L 26,240 Q 0,240 0,220 L 0,26 Q 0,0 26,0 Z')",
-              }}
-            >
-              <div className="product-glow"></div>
-
-              <div className="product-content">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+              <div className="product-logo">
+                <img src={item.image} alt={item.title} />
               </div>
-            </div>
-          </div>
-        ))}
+
+              <div
+                className="product-card"
+                style={{
+                  clipPath:
+                    "path('M 32,0 L 96,0 C 116,0 108,22 128,22 L 192,22 C 212,22 204,0 224,0 L 288,0 Q 320,0 320,32 L 320,268 Q 320,288 288,288 L 32,288 Q 0,288 0,268 L 0,32 Q 0,0 32,0 Z')",
+                }}
+              >
+                <div className="product-glow"></div>
+
+                <div className="product-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
       </div>
     </section>
   );
