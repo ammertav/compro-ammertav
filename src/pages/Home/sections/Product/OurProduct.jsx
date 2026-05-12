@@ -46,8 +46,9 @@ export default function OurProduct() {
             Business—From Modern POS Systems, Ticketing Solutions,
             And CRM To Professional Websites—All In One Platform!
           </p>
-
-          <button className="read-more-btn">
+        </div>
+        <div className="product-button-wrapper-op">
+          <button className="read-more-btn-op">
             READ MORE
           </button>
         </div>
