@@ -40,12 +40,22 @@
   position: relative;
   overflow: hidden;
   padding-block: var(--section-spacing);
-  color: var(--text-primary);
   background-color: #040414;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  color: var(--text-primary);
   font-family: "Poppins", sans-serif;
+}
+
+.aboutsec-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+
+  opacity: 1;
+  pointer-events: none;
 }
 
 .aboutsec::before {

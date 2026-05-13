@@ -1,6 +1,6 @@
 import "./AboutSection.css";
 import robotImg from "../../../../assets/aboutRobot.png";
-import bgImage from "../../../../assets/aboutBG.png";
+import bgImage from "../../../../assets/quotesBG.png";
 
 import hexagon1 from "../../../../assets/tinyhex.png";
 import hexagon2 from "../../../../assets/tinyhex.png";
@@ -28,11 +28,11 @@ const steps = [
 export default function AboutSection() {
     return (
         <section
-            className="aboutsec"
-            style={{
-                backgroundImage: `url(${bgImage})`,
-            }}
-        >
+            className="aboutsec">
+            <div
+                className="aboutsec-bg"
+                style={{ backgroundImage: `url(${bgImage})` }}
+            ></div>
             <div className="aboutsec-shell">
                 <div className="aboutsec-container">
                     <div className="aboutsec-left">

@@ -1,0 +1,405 @@
+:root {
+  --container-width: 1280px;
+  --page-padding: clamp(16px, 5vw, 80px);
+  --section-spacing: clamp(64px, 8vw, 120px);
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --accent: #ff00ff;
+
+  --radius-lg: 24px;
+  --radius-md: 18px;
+
+  --gap-sm: clamp(12px, 2vw, 18px);
+  --gap-md: clamp(20px, 3vw, 32px);
+  --gap-lg: clamp(32px, 5vw, 72px);
+
+  --transition: all 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* SECTION */
+.contactfaqsec {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background-color: #040414;
+  color: white;
+}
+
+/* BACKGROUND */
+
+.contactfaqsec-bg-wrapper {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: max(130vw, 1400px);
+  height: max(130vh, 1000px);
+
+  background:
+    url("../../../../assets/ammertavBG.png")
+    no-repeat center/cover;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(90deg);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+/* CONTENT */
+
+.contactfaqsec-container {
+  position: relative;
+  z-index: 2;
+  width: min(100%, var(--container-width));
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+  padding-top: 140px;
+  padding-bottom: var(--section-spacing);
+}
+
+/* HEADING */
+.contactfaqsec-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  
+}
+
+.contactfaqsec-heading span {
+  color: white;
+  letter-spacing: 0.3em;
+  font-size: 1.5rem;
+}
+
+.contactfaqsec-heading h2 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* GLASS SHELL */
+.contactfaqsec-glass-shell {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.contactfaqsec-glass-shell > * {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* MAIN CARD LAYOUT */
+.contactfaqsec-glass-card-layout {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+
+  padding: 32px;
+  border-radius: var(--card-radius);
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+}
+
+/* LEFT */
+.contactfaqsec-form-side {
+  width: 100%;
+}
+
+.contactfaqsec-form-group {
+  margin-bottom: 18px;
+}
+
+.contactfaqsec-form-group label {
+  display: block;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.contactfaqsec-form-group .glass-input {
+  width: 100% !important;
+}
+
+.contactfaqsec-form-group textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 16px;
+
+  border: none;
+  outline: none;
+  resize: none;
+
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.contactfaqsec-btn {
+  width: 100% !important;
+  height: 54px !important;
+  border-radius: 16px !important;
+
+  background: linear-gradient(
+    135deg,
+    #6d00ff,
+    #cf00ff
+  ) !important;
+
+  color: white !important;
+}
+
+/* RIGHT */
+.contactfaqsec-info-side {
+  display: flex;
+  heading: 100%;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contactfaqsec-company {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contactfaqsec-logo {
+  width: 110px;
+}
+
+.contactfaqsec-company h3 {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.contactfaqsec-company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactfaqsec-company-info p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.contactfaqsec-map-wrapper{
+    margin-top: auto;
+    width: 100%;
+}
+.contactfaqsec-map-wrapper iframe {
+  width: 100%;
+  height: 220px;
+  border: none;
+  border-radius: 16px;
+  display: block;
+}
+.contactfaqsec-map-wrapper p {
+  margin-top: 10px;
+  color: white;
+  line-height: 1.6;
+}
+
+
+/* FAQ*/
+
+
+/* SECTION */
+.contactfaqsec-section {
+  width: min(100%, var(--container-width));
+  
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  padding-top: 80px;
+  margin-inline: auto;
+}
+
+/* HEADER */
+.contactfaqsec-header {
+  margin-bottom: clamp(40px, 6vw, 80px);
+  max-width: 900px;
+}
+
+.contactfaqsec-tag {
+  display: inline-block;
+  margin-bottom: clamp(14px, 2vw, 20px);
+
+  color: var(--accent);
+  font-size: clamp(1rem, 0.85vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.contactfaqsec-title {
+  color: var(--text-primary);
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+
+  max-width: 850px;
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+.contactfaqsec-description {
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+/* CONTENT LAYOUT */
+.contactfaqsec-content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+
+/* LEFT */
+.contactfaqsec-left {
+  width: 100%;
+}
+
+.contactfaqsec-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+/* FAQ CARD */
+.contactfaqsec-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.contactfaqsec-item:hover {
+  border-color: rgba(255, 0, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.contactfaqsec-item.active {
+  border-color: rgba(255, 0, 255, 0.45);
+}
+
+.contactfaqsec-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+
+  padding: clamp(18px, 2vw, 24px);
+
+  text-align: left;
+  color: var(--text-primary);
+
+  font-family: inherit;
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.contactfaqsec-icon {
+  flex-shrink: 0;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1;
+}
+
+/* ANSWER */
+.contactfaqsec-answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.contactfaqsec-answer-wrapper.show {
+  max-height: 320px;
+}
+
+.contactfaqsec-answer {
+  padding-inline: clamp(18px, 2vw, 24px);
+  padding-bottom: clamp(18px, 2vw, 24px);
+
+  color: var(--text-secondary);
+  font-size: clamp(0.92rem, 1vw, 1rem);
+  line-height: 1.8;
+}
+
+/* RIGHT IMAGE */
+.contactfaqsec-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contactfaqsec-image {
+  width: clamp(260px, 34vw, 460px);
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  filter: drop-shadow(0 0 45px rgba(140, 0, 255, 0.45));
+}
+/* TABLET + MOBILE */
+@media (max-width: 992px) {
+  .contactfaqsec-glass-card-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contactfaqsec-faq-section {
+    flex-direction: column;
+  }
+
+  .contactfaqsec-faq-right {
+    width: 240px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .contactfaqsec-glass-card-layout {
+    padding: 20px;
+  }
+
+  .contactfaqsec-heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .contactfaqsec-faq-left h2 {
+    font-size: 1.8rem;
+  }
+}

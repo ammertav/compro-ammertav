@@ -1,0 +1,287 @@
+:root {
+  --container-width: 1280px;
+  --page-padding: clamp(16px, 5vw, 80px);
+  --section-spacing: clamp(64px, 8vw, 120px);
+
+  --card-radius: 24px;
+  --card-width: min(100%, 320px);
+
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --accent: #ef00fc;
+}
+/* AboutWorkSection.css */
+
+
+.aboutworksec {
+  background: #030312;
+  font-family: "Poppins", sans-serif;
+}
+
+.aboutworksec-container {
+  width: min(100%, var(--container-width));
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+}
+
+/* HEADER */
+
+.aboutworksec-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 50px;
+}
+
+.aboutworksec-header span {
+  color: white;
+  font-size: 14px;
+  letter-spacing: 8px;
+  font-weight: 400;
+}
+
+.aboutworksec-header h2 {
+  color: #d400ff;
+  font-size: 18px;
+  letter-spacing: 6px;
+  font-weight: 700;
+}
+
+/* GRID */
+
+.aboutworksec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* CARD */
+
+.aboutworksec-card {
+  width: 100%;
+}
+
+/* IMAGE */
+
+.aboutworksec-image-wrapper {
+  width: 100%;
+  height: 280px;
+
+  overflow: hidden;
+  border-radius: 24px;
+
+  background: #111;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: 0.4s ease;
+}
+
+.aboutworksec-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  display: block;
+
+  transition: 0.4s ease;
+}
+
+.aboutworksec-card:hover .aboutworksec-image-wrapper img {
+  transform: scale(1.05);
+}
+
+/* TITLE */
+
+.aboutworksec-title {
+  margin-top: 14px;
+
+  background: rgba(255,255,255,0.04);
+
+  border-radius: 12px;
+
+  padding: 12px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255,255,255,0.05);
+
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.aboutworksec-title h3 {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* =========================
+   MOBILE
+   <= 576px
+========================= */
+
+@media (max-width: 576px) {
+
+  .aboutworksec {
+    padding: 80px 20px;
+  }
+
+  .aboutworksec-header {
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .aboutworksec-header span {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+
+  .aboutworksec-header h2 {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+
+  .aboutworksec-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .aboutworksec-image-wrapper {
+    height: 210px;
+    border-radius: 18px;
+  }
+
+  .aboutworksec-title {
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .aboutworksec-title h3 {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================
+   TABLET
+   577px - 768px
+========================= */
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+  .aboutworksec {
+    padding: 90px 32px;
+  }
+
+  .aboutworksec-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .aboutworksec-image-wrapper {
+    height: 260px;
+  }
+
+  .aboutworksec-title h3 {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================
+   DESKTOP
+   769px - 1024px
+========================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .aboutworksec {
+    padding: 100px 40px;
+  }
+
+  .aboutworksec-container {
+    max-width: 950px;
+  }
+
+  .aboutworksec-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .aboutworksec-image-wrapper {
+    height: 240px;
+  }
+
+  .aboutworksec-title h3 {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================
+   MEDIUM DESKTOP
+   1025px - 1440px
+========================= */
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  .aboutworksec-container {
+    width: min(100%, var(--container-width));
+    margin-inline: auto;
+    padding-inline: var(--page-padding);
+}
+
+  .aboutworksec-grid {
+    gap: 32px;
+  }
+
+  .aboutworksec-image-wrapper {
+    height: 280px;
+  }
+}
+
+
+/* =========================
+   LARGE DESKTOP
+   >= 1441px
+========================= */
+
+@media (min-width: 1441px) {
+
+  .aboutworksec {
+    padding: 140px 6%;
+  }
+
+  .aboutworksec-container {
+    max-width: 1500px;
+  }
+
+  .aboutworksec-grid {
+    gap: 40px;
+  }
+
+  .aboutworksec-image-wrapper {
+    height: 340px;
+  }
+
+  .aboutworksec-title {
+    padding: 16px;
+  }
+
+  .aboutworksec-title h3 {
+    font-size: 18px;
+  }
+
+  .aboutworksec-header span {
+    font-size: 15px;
+  }
+
+  .aboutworksec-header h2 {
+    font-size: 20px;
+  }
+}

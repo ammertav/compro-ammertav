@@ -114,9 +114,15 @@
 }
 
 .btn-connect {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   padding: 12px 22px;
-  border: none;
   border-radius: 999px;
+
+  text-decoration: none;
+  border: none;
 
   background: linear-gradient(90deg, #6a00ff, #9d4edd);
   color: white;
@@ -125,12 +131,14 @@
   font-weight: 600;
 
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.btn-connect:hover {
+.btn-connect:hover,
+.btn-connect.active {
   opacity: 0.9;
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(157, 78, 221, 0.3);
 }
 
 /* =========================
