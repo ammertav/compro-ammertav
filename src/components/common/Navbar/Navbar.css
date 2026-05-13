@@ -8,6 +8,7 @@
   width: 100%;
   z-index: 1000;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* =========================
@@ -76,8 +77,20 @@
   margin: 0;
 }
 
+/* li wrapper */
 .navbar-menu li {
+  list-style: none;
+}
+
+/* nav links */
+.navbar-menu a {
   position: relative;
+  display: inline-block;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  text-decoration: none;
   cursor: pointer;
 
   color: white;
@@ -86,15 +99,10 @@
   transition: all 0.3s ease;
 }
 
-.navbar-menu li:hover,
-.navbar-menu li.active {
+/* hover + active route */
+.navbar-menu a:hover,
+.navbar-menu a.active {
   color: #c77dff;
-}
-
-/* optional subtle active */
-.navbar-menu li.active {
-  padding: 8px 14px;
-  border-radius: 999px;
   background: rgba(157, 78, 221, 0.12);
 }
 

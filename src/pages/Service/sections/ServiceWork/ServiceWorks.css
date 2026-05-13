@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --container-width: 1280px;
+  --page-padding: clamp(16px, 5vw, 80px);
+  --section-spacing: clamp(64px, 8vw, 120px);
+
+  --text-primary: #fff;
+  --text-secondary: #d1d5db;
+  --accent: #ff00ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.workflowsec-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--section-spacing);
+  background: #040414;
+}
+
+.workflowsec-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 70%, rgba(186, 0, 255, 0.18), transparent 35%),
+    radial-gradient(circle at 85% 20%, rgba(98, 0, 255, 0.12), transparent 25%);
+}
+
+.workflowsec-container {
+  position: relative;
+  z-index: 2;
+  width: min(100%, var(--container-width));
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+}
+
+.workflowsec-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.workflowsec-subtitle span {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.workflowsec-title {
+  display: inline-block;
+  font-size: clamp(1rem, 3vw, 2rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.workflowsec-description {
+  max-width: 700px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+/* SLIDER */
+.workflowsec-slider {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+
+  scrollbar-width: none;
+}
+
+.workflowsec-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.workflowsec-card {
+  position: relative;
+  isolation: isolate;
+
+  flex: 0 0 280px;
+  width: 280px;
+  height: 220px;
+  padding: 3.5rem 1.5rem 1.5rem;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.09),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.14),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.03);
+
+  scroll-snap-align: start;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+.workflowsec-card:hover {
+  transform: translateY(-6px);
+  background: rgba(12, 12, 35, 0.96);
+}
+
+.workflowsec-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.workflowsec-card p {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .workflowsec-card {
+    flex: 0 0 260px;
+    width: 260px;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .workflowsec-card {
+    flex: 0 0 270px;
+    width: 270px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .workflowsec-card {
+    flex: 0 0 280px;
+  }
+}
+
+/* MEDIUM DESKTOP */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .workflowsec-card {
+    flex: 0 0 280px;
+  }
+}
+
+/* LARGE DESKTOP */
+@media (min-width: 1440px) {
+  .workflowsec-card {
+    flex: 0 0 280px;
+  }
+}

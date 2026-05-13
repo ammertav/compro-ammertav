@@ -1,4 +1,4 @@
-import Navbar from "../../../../components/common/Navbar/Navbar";
+
 import ServiceCard from "../../../../components/ui/ServiceCard/ServiceCard";
 import "./Hero.css"
 
@@ -37,8 +37,6 @@ export default function Hero() {
             <div className="section-container">
                 {/* BACKGROUND (WAJIB PALING ATAS) */}
                 <div className="hero-bg-wrapper"></div>
-
-                <Navbar />
                 <div className="hero-container">
                     <div className="hero-left">
 

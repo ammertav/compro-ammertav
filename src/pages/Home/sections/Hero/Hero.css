@@ -45,7 +45,7 @@
   width: min(100%, var(--container-width));
   margin-inline: auto;
   padding-inline: var(--page-padding);
-  padding-block: var(--section-space);
+  padding-block: var(--section-spacing);
 
   display: flex;
   align-items: center;
@@ -58,6 +58,7 @@
 .hero-left {
   flex: 1;
   max-width: 620px;
+  padding-block: 40px;
 }
 
 .hero-tagline {
@@ -115,6 +116,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  padding-block: 40px;
 }
 
 .hero-right img {

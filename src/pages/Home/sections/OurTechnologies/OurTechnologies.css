@@ -43,7 +43,7 @@ body {
   overflow: hidden;
   position: relative;
 
-  padding-block: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
 }
 
 .technology-content {

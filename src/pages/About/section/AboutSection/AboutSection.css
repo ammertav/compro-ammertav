@@ -1,0 +1,431 @@
+/* =========================
+   DESIGN SYSTEM
+========================= */
+:root {
+  --container-width: 1280px;
+  --page-padding: clamp(16px, 5vw, 80px);
+  --section-spacing: clamp(64px, 8vw, 120px);
+
+  --card-radius: 24px;
+  --card-width: min(100%, 320px);
+
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --accent: #ef00fc;
+}
+
+/* =========================
+   EXTRA WRAPPERS
+========================= */
+.aboutsec-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-block: var(--section-spacing);
+}
+
+.aboutsec-client-section {
+  width: 100%;
+}
+
+.bold {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.aboutsec {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--section-spacing);
+  color: var(--text-primary);
+  background-color: #040414;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Poppins", sans-serif;
+}
+
+.aboutsec::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.aboutsec-container,
+.aboutsec-workflow-container,
+.aboutsec-subtitle-our {
+  position: relative;
+  z-index: 1;
+  width: min(100%, var(--container-width));
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+.aboutsec-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+}
+
+.aboutsec-left,
+.aboutsec-right {
+  width: 100%;
+}
+
+.aboutsec-right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vw, 24px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.aboutsec-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutsec-image-wrapper img {
+  width: clamp(220px, 28vw, 360px);
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+.aboutsec-subtitle,
+.aboutsec-subtitle-our {
+  letter-spacing: 0.28em;
+  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.aboutsec-subtitle span,
+.aboutsec-subtitle-our span {
+  color: var(--accent);
+}
+
+.aboutsec-title {
+  font-size: clamp(1rem, 4vw, 2rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.aboutsec-desc {
+  font-size: clamp(0.7rem, 1.2vw, 1rem);
+  line-height: 1.5;
+  color: #ccc;
+  max-width: 56ch;
+}
+
+.aboutsec-highlight {
+  font-size: clamp(0.7rem, 1.3vw, 1.15rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.aboutsec-btn {
+  width: fit-content;
+  padding: clamp(12px, 1vw, 16px) clamp(24px, 2vw, 34px);
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, #6a00ff, #ff00ff);
+  color: white;
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.aboutsec-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.35);
+}
+
+/* =========================
+   WORKFLOW SECTION
+========================= */
+.aboutsec-workflow-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+  margin-top: clamp(56px, 8vw, 100px);
+}
+
+.aboutsec-workflow-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* icon */
+.aboutsec-step-icon {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 90px;
+  height: 90px;
+}
+
+.aboutsec-step-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.4));
+}
+
+/* =========================
+   CARD
+========================= */
+.aboutsec-workflow-card {
+  position: relative;
+  width: min(100%, 320px);
+  min-height: 288px;
+  padding: 34px 28px;
+  padding-top: 58px;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+}
+
+.aboutsec-workflow-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
+}
+
+/* glow */
+.aboutsec-workflow-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 150%;
+  height: 60%;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.25) 0%,
+    rgba(168, 85, 247, 0) 70%
+  );
+  filter: blur(35px);
+  pointer-events: none;
+}
+
+/* content */
+.aboutsec-workflow-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: clamp(18px, 2vw, 24px);
+  padding-top: clamp(8px, 1vw, 12px);
+}
+
+.aboutsec-workflow-card h3 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.aboutsec-workflow-card p {
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 22ch;
+  margin-inline: auto;
+}
+
+/* =========================
+   CLIENT
+========================= */
+.aboutsec-subtitle-our {
+  text-align: center;
+  margin-top: clamp(64px, 8vw, 120px);
+}
+
+/* =========================
+   MOBILE <768px
+========================= */
+@media (max-width: 767px) {
+  .aboutsec {
+    padding-block: clamp(64px, 12vw, 88px);
+  }
+
+  .aboutsec-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .aboutsec-right {
+    align-items: center;
+  }
+
+  .aboutsec-image-wrapper img {
+    width: clamp(200px, 60vw, 280px);
+  }
+
+  .aboutsec-desc {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .aboutsec-btn {
+    margin-inline: auto;
+  }
+
+  .aboutsec-workflow-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 56px;
+  }
+
+  .aboutsec-workflow-card {
+    width: min(100%, 260px);
+    margin-inline: auto;
+  }
+
+  .aboutsec-workflow-content {
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+  }
+}
+
+/* =========================
+   TABLET 768px–1023px
+========================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .aboutsec-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 56px;
+  }
+
+  .aboutsec-right {
+    align-items: center;
+  }
+
+  .aboutsec-image-wrapper img {
+    width: clamp(260px, 42vw, 340px);
+  }
+
+  .aboutsec-desc {
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .aboutsec-btn {
+    margin-inline: auto;
+  }
+
+  .aboutsec-workflow-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+
+  .aboutsec-workflow-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* =========================
+   DESKTOP 1024px–1279px
+========================= */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .aboutsec-container {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 56px;
+  }
+
+  .aboutsec-image-wrapper img {
+    width: clamp(260px, 28vw, 320px);
+  }
+
+  .aboutsec-workflow-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .aboutsec-workflow-card,
+  .aboutsec-workflow-wrapper {
+    width: 320px;
+  }
+}
+
+/* =========================
+   MEDIUM DESKTOP 1280px–1439px
+========================= */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .aboutsec-container {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 72px;
+  }
+
+  .aboutsec-image-wrapper img {
+    width: clamp(300px, 26vw, 360px);
+  }
+
+  .aboutsec-workflow-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+  }
+
+  .aboutsec-workflow-card,
+  .aboutsec-workflow-wrapper {
+    width: 320px;
+  }
+}
+
+/* =========================
+   LARGE DESKTOP 1440px+
+========================= */
+@media (min-width: 1440px) {
+  .aboutsec-container {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 96px;
+  }
+
+  .aboutsec-image-wrapper img {
+    width: clamp(320px, 24vw, 380px);
+  }
+
+  .aboutsec-workflow-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+
+  .aboutsec-workflow-card,
+  .aboutsec-workflow-wrapper {
+    width: 320px;
+  }
+}

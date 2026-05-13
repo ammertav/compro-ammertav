@@ -1,5 +1,6 @@
 import logo from "../../../assets/ammertavlogo.png";
 import { GlassCard } from "react-glass-ui";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -16,10 +17,21 @@ export default function Navbar() {
             {/* CENTER - NAVIGATION */}
             <nav className="navbar-menu">
               <ul>
-                <li className="active">Home</li>
-                <li>Product</li>
-                <li>Service</li>
-                <li>About Us</li>
+                <li>
+                  <NavLink to="/">Home</NavLink>
+                </li>
+
+                <li>
+                  <NavLink to="/product">Product</NavLink>
+                </li>
+
+                <li>
+                  <NavLink to="/service">Service</NavLink>
+                </li>
+
+                <li>
+                  <NavLink to="/about-us">About Us</NavLink>
+                </li>
               </ul>
             </nav>
 
