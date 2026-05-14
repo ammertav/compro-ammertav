@@ -58,36 +58,35 @@
   content: "";
   position: absolute;
   inset: 0;
-
   z-index: 2;
 
   background:
   
-    /* LEFT FADE */
+    /* LEFT */
     linear-gradient(
       to right,
       #040414 0%,
-      rgba(4, 4, 20, 0.98) 10%,
-      rgba(4, 4, 20, 0.9) 18%,
-      rgba(4, 4, 20, 0) 38%
+      rgba(4, 4, 20, 0.95) 8%,
+      rgba(4, 4, 20, 0.4) 14%,
+      transparent 22%
     ),
 
-    /* RIGHT FADE */
+    /* RIGHT */
     linear-gradient(
       to left,
       #040414 0%,
-      rgba(4, 4, 20, 0.98) 10%,
-      rgba(4, 4, 20, 0.9) 18%,
-      rgba(4, 4, 20, 0) 38%
+      rgba(4, 4, 20, 0.95) 8%,
+      rgba(4, 4, 20, 0.4) 14%,
+      transparent 22%
     ),
 
-    /* BOTTOM FADE */
+    /* BOTTOM */
     linear-gradient(
       to top,
       #040414 0%,
-      rgba(4, 4, 20, 0.98) 12%,
-      rgba(4, 4, 20, 0.85) 22%,
-      rgba(4, 4, 20, 0) 45%
+      rgba(4, 4, 20, 0.95) 10%,
+      rgba(4, 4, 20, 0.4) 18%,
+      transparent 30%
     );
 }
 
