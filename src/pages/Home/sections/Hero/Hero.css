@@ -26,12 +26,69 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: max(130vw, 1400px);
-  height: max(130vh, 1000px);
-  background: url("../../../../assets/ammertavBG.png") no-repeat center/cover;
+
+  width: max(140vw, 1600px);
+  height: max(140vh, 1200px);
+
   transform: translate(-50%, -50%) rotate(90deg);
-  will-change: transform;
+
   z-index: 0;
+  overflow: hidden;
+}
+
+/* BACKGROUND IMAGE */
+.hero-bg-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+
+  background: 
+    url("../../../../assets/ammertavBG.png")
+    no-repeat center/cover;
+
+  z-index: 1;
+
+  /* bikin gambar lebih blend */
+  opacity: 0.9;
+  filter: blur(2px);
+}
+
+/* STRONG EDGE FADE */
+.hero-bg-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  background:
+  
+    /* LEFT FADE */
+    linear-gradient(
+      to right,
+      #040414 0%,
+      rgba(4, 4, 20, 0.98) 10%,
+      rgba(4, 4, 20, 0.9) 18%,
+      rgba(4, 4, 20, 0) 38%
+    ),
+
+    /* RIGHT FADE */
+    linear-gradient(
+      to left,
+      #040414 0%,
+      rgba(4, 4, 20, 0.98) 10%,
+      rgba(4, 4, 20, 0.9) 18%,
+      rgba(4, 4, 20, 0) 38%
+    ),
+
+    /* BOTTOM FADE */
+    linear-gradient(
+      to top,
+      #040414 0%,
+      rgba(4, 4, 20, 0.98) 12%,
+      rgba(4, 4, 20, 0.85) 22%,
+      rgba(4, 4, 20, 0) 45%
+    );
 }
 
 /* ===================== */
