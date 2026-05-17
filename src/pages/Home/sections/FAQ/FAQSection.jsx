@@ -1,7 +1,5 @@
-import "./FAQSection.css";
 import { useState } from "react";
-import faqimage from "../../../../assets/Faqimage.png"
-import Footer from "../../../../components/common/Footer/Footer";
+import faqimage from "../../../../assets/Faqimage.webp";
 
 const faqData = [
   {
@@ -44,17 +42,19 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="faq-section">
-      <div className="faq-container">
-        {/* TOP CONTENT */}
-        <div className="faq-header">
-          <span className="faq-tag">FAQ</span>
-
-          <h2 className="faq-title">
-            FIND ANSWERS TO YOUR QUESTIONS
+    <section className="relative w-full bg-ink text-white py-section overflow-hidden">
+      <div className="relative z-[2] w-full max-w-container mx-auto px-page">
+        {/* HEADER — left-aligned at all viewports */}
+        <div className="flex flex-col gap-4 lg:gap-5 max-w-[850px] text-left items-start mb-12 md:mb-16">
+          <h2 className="tracking-[6px] font-thin text-lg md:text-xl uppercase">
+            <span className="text-accent-pink font-bold">FAQ</span>
           </h2>
 
-          <p className="faq-description">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl leading-tight font-bold">
+            FIND ANSWERS TO YOUR QUESTIONS
+          </h3>
+
+          <p className="text-sm md:text-base text-fg-muted leading-relaxed lg:max-w-prose">
             We Are Your Trusted Partner In Innovative And Reliable
             Software Development. With Modern Technology,
             Expert Teams, And A Business-Focused Approach,
@@ -62,47 +62,50 @@ export default function FAQSection() {
           </p>
         </div>
 
-        {/* BOTTOM CONTENT */}
-        <div className="faq-content">
-          {/* FAQ LIST */}
-          <div className="faq-left">
-            <div className="faq-list">
-              {faqData.map((item, index) => (
+        {/* CONTENT — FAQ list + image */}
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
+          {/* FAQ LIST — order 1 at lg+ (left side) */}
+          <div className="w-full flex flex-col gap-3 md:gap-4 lg:order-1">
+            {faqData.map((item, index) => {
+              const isOpen = activeIndex === index;
+              return (
                 <div
-                  className={`faq-item ${
-                    activeIndex === index ? "active" : ""
-                  }`}
                   key={index}
+                  className={`bg-surface backdrop-blur-md rounded-2xl border overflow-hidden transition-all duration-300 hover:border-accent-pink/35 hover:-translate-y-0.5 ${
+                    isOpen ? "border-accent-pink/45" : "border-surface-border"
+                  }`}
                 >
                   <button
-                    className="faq-question"
+                    type="button"
                     onClick={() => toggleFAQ(index)}
+                    className="w-full bg-transparent border-0 cursor-pointer flex justify-between items-center gap-4 p-5 md:p-6 text-left text-white font-semibold text-base md:text-lg leading-snug"
                   >
                     <span>{item.question}</span>
-
-                    <span className="faq-icon">
-                      {activeIndex === index ? "−" : "⌄"}
+                    <span className="flex-shrink-0 text-2xl leading-none">
+                      {isOpen ? "−" : "⌄"}
                     </span>
                   </button>
 
                   <div
-                    className={`faq-answer-wrapper ${
-                      activeIndex === index ? "show" : ""
+                    className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
+                      isOpen ? "max-h-[320px]" : "max-h-0"
                     }`}
                   >
-                    <p className="faq-answer">{item.answer}</p>
+                    <p className="px-5 md:px-6 pb-5 md:pb-6 text-sm text-fg-muted leading-relaxed">
+                      {item.answer}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
-          {/* FAQ IMAGE */}
-          <div className="faq-right">
+          {/* IMAGE — first at mobile/md (top), right column at lg+ */}
+          <div className="order-first lg:order-2 flex justify-center">
             <img
               src={faqimage}
               alt="FAQ"
-              className="faq-image"
+              className="max-w-full h-auto object-contain [filter:drop-shadow(0_0_45px_rgba(140,0,255,0.45))] w-44 md:w-56 lg:w-80 xl:w-96"
             />
           </div>
         </div>

@@ -1,39 +1,60 @@
-import "./Footer.css";
-import imagefooter from "../../../assets/footerimage.png"
+import { GlassCard } from "react-glass-ui";
+import footerBg from "../../../assets/footerimagenew.webp";
 
 export default function Footer() {
-  return (
-    <footer className="footer-section">
+    return (
+        <footer className="relative w-full overflow-hidden bg-ink text-white">
+            {/* CTA SECTION */}
+            <div className="flex flex-col items-center text-center py-10 px-page">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 max-w-[1000px]">
+                    &ldquo;READY TO START YOUR OWN PROJECT?&rdquo;
+                </h2>
 
-      {/* CTA */}
-      <div className="footer-cta">
-        <h2>"READY TO START YOUR OWN PROJECT?"</h2>
+                <p className="max-w-[720px] text-xs md:text-sm text-fg-muted leading-relaxed mb-8">
+                    LETS BUILD SOMETHING AMAZING TOGETHER WITH
+                    SCALABLE, FUTURE READY TECHNOLOGY.
+                </p>
 
-        <p>
-          LETS BUILD SOMETHING AMAZING TOGETHER WITH
-          SCALABLE, FUTURE READY TECHNOLOGY.
-        </p>
+                {/* GET STARTED — glass effect via GlassCard */}
+                <div className="inline-flex transition-transform duration-300 hover:-translate-y-1">
+                    <GlassCard className="!rounded-full overflow-hidden">
+                        <button
+                            type="button"
+                            className="px-8 py-3 bg-transparent border-0 text-white text-sm font-semibold tracking-wide cursor-pointer transition duration-300 hover:opacity-85"
+                        >
+                            GET STARTED
+                        </button>
+                    </GlassCard>
+                </div>
+            </div>
 
-        <button>GET STARTED</button>
-      </div>
+            {/* FOOTER BOTTOM — company info with bg image */}
+            <div
+                className="relative w-full min-h-[340px] md:min-h-[420px] flex flex-col justify-center items-center text-center pt-24 pb-5 px-page bg-ink bg-cover md:bg-[length:100%_auto] bg-no-repeat bg-top"
+                style={{ backgroundImage: `url(${footerBg})` }}
+            >
+                {/* Info */}
+                <div className="relative z-[2] flex flex-col items-center">
+                    <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
+                        PT. Pandu Usaha Nusantara
+                    </h3>
 
-      {/* FOOTER BOTTOM */}
-      <div className="footer-bottom">
+                    <p className="text-sm md:text-base text-fg-muted leading-relaxed">
+                        Jl. Kota Semarang, Indonesia
+                    </p>
+                    <p className="text-sm md:text-base text-fg-muted leading-relaxed">
+                        Phone : 0821567891011
+                    </p>
+                    <p className="text-sm md:text-base text-fg-muted leading-relaxed">
+                        Email : pausunantara@gmail.com
+                    </p>
+                </div>
 
-        {/* FOOTER CONTENT */}
-        <div className="footer-info">
-          <h3>PT. Pandu Usaha Nusantara</h3>
-
-          <p>Jl. Kota Semarang, Indonesia</p>
-          <p>Phone : 0821567891011</p>
-          <p>Email : pausunantara@gmail.com</p>
-        </div>
-
-        {/* COPYRIGHT */}
-        <div className="footer-copy">
-          © Ammertav, All Right Reserved
-        </div>
-      </div>
-    </footer>
-  );
+                {/* Copyright */}
+                <div className="relative z-[2] mt-3 text-xs text-white/45">
+                    © Ammertav, All Right Reserved
+                </div>
+            </div>
+        </footer>
+    );
 }

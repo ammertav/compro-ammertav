@@ -1,10 +1,10 @@
 import "./ProductClient.css";
 
-import client1 from "../../../../assets/logohriesnew.png";
-import client2 from "../../../../assets/logobeilpos.png";
-import client3 from "../../../../assets/logofunnevnew.png";
-import client4 from "../../../../assets/logofunnevnew.png";
-import client5 from "../../../../assets/logofunnevnew.png";
+import client1 from "../../../../assets/logohriesnew.webp";
+import client2 from "../../../../assets/logobeilpos.webp";
+import client3 from "../../../../assets/logofunnevnew.webp";
+import client4 from "../../../../assets/logofunnevnew.webp";
+import client5 from "../../../../assets/logofunnevnew.webp";
 
 const clients = [
   {

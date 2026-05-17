@@ -1,13 +1,13 @@
 import React from "react";
 import "./ServiceSection.css";
 
-import robot from "../../../../assets/robotOurService.png";
-import logo1 from "../../../../assets/logoOS1.png";
-import logo2 from "../../../../assets/logoOS2.png";
-import logo3 from "../../../../assets/logoOS3.png";
-import logo4 from "../../../../assets/logoOS4.png";
-import logo5 from "../../../../assets/logoOS5.png";
-import logo6 from "../../../../assets/logoOS6.png";
+import robot from "../../../../assets/robotOurService.webp";
+import logo1 from "../../../../assets/logoOS1.webp";
+import logo2 from "../../../../assets/logoOS2.webp";
+import logo3 from "../../../../assets/logoOS3.webp";
+import logo4 from "../../../../assets/logoOS4.webp";
+import logo5 from "../../../../assets/logoOS5.webp";
+import logo6 from "../../../../assets/logoOS6.webp";
 
 const services = [
   {

@@ -1,102 +1,120 @@
-import "./About.css";
-import robotImg from "../../../../assets/aboutRobot.png";
-import bgImage from "../../../../assets/aboutBG.png";
+import { GlassCard } from "react-glass-ui";
 import Client from "./Client";
-import hexagon1 from "../../../../assets/tinyhex.png"
-import hexagon2 from "../../../../assets/tinyhex.png"
-import hexagon3 from "../../../../assets/tinyhex.png"
+
+import robotImg from "../../../../assets/aboutRobot.png";
+import bgImage from "../../../../assets/aboutBG.webp";
+import hexagon from "../../../../assets/tinyhex.webp";
 
 const steps = [
-  {
-    title: "250+",
-    text: "PROJECT",
-    image: hexagon1,
-  },
-  {
-    title: "20+",
-    text: "EMPLOYEES",
-    image: hexagon2,
-  },
-  {
-    title: "75+",
-    text: "CLIENT",
-    image: hexagon3,
-  },
+  { title: "250+", text: "PROJECT" },
+  { title: "20+", text: "EMPLOYEES" },
+  { title: "75+", text: "CLIENT" },
 ];
+
+const innerGlow = "radial-gradient(circle, rgba(168,85,247,0.25) 0%, transparent 70%)";
 
 export default function About() {
   return (
-    <section
-      className="about"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
-    >
-      <div className="about-shell">
-        <div className="about-container">
-          <div className="about-left">
-            <div className="about-image-wrapper">
-              <img src={robotImg} alt="robot" />
-            </div>
+    <section className="relative overflow-hidden bg-ink text-white">
+      {/* BG IMAGE */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      />
+
+      {/* TOP FADE — blends in from Hero */}
+      <div className="absolute inset-x-0 top-0 h-80 z-[1] pointer-events-none bg-gradient-to-b from-ink to-transparent" />
+
+      {/* CONTENT */}
+      <div className="relative z-[2] py-16 md:py-8">
+        {/* MAIN GRID */}
+        <div className="w-full max-w-container mx-auto px-page grid grid-cols-1 items-center gap-10 md:grid-cols-[auto_1fr] md:gap-8 lg:gap-16">
+          {/* Robot — center at mobile, hug column at md+ */}
+          <div className="flex justify-center md:justify-start flex-shrink-0">
+            <img
+              src={robotImg}
+              alt="robot"
+              className="max-w-full h-auto w-64 md:w-48 lg:w-80"
+            />
           </div>
 
-          <div className="about-right">
-            <p className="about-subtitle">
-              ABOUT <span>US</span>
+          {/* Text */}
+          <div className="flex flex-col items-start gap-4 lg:gap-5 max-md:bg-ink/40 max-md:backdrop-blur-sm max-md:rounded-2xl max-md:p-5">
+            <h2 className="tracking-[6px] font-thin text-lg md:text-xl uppercase">
+              ABOUT <span className="text-accent-pink font-bold">US</span>
+            </h2>
+
+            <h3 className="text-2xl md:text-3xl lg:text-4xl leading-tight font-bold">
+              WHAT IS AMMERTAV?
+            </h3>
+
+            <p className="text-sm md:text-base leading-relaxed lg:max-w-prose">
+              AMMERTAV is a software house focused on building innovative, scalable, and future-ready digital solutions.
+              We help businesses grow through modern web and mobile applications.
             </p>
 
-            <h2 className="about-title">WHAT IS AMMERTAV?</h2>
-
-            <p className="about-desc">
-             AMMERTAV is a software house focused on building innovative, scalable, and future-ready digital solutions. 
-             We help businesses grow through modern web and mobile applications.
+            <p className="text-base md:text-lg font-semibold">
+              WE&rsquo;VE SUCCESSFULLY DELIVERED 250+ PROJECTS.
             </p>
 
-            <p className="about-highlight">
-              WE’VE SUCCESSFULLY DELIVERED 250+ PROJECTS.
+            <p className="text-sm md:text-base leading-relaxed lg:max-w-prose">
+              We specialize <span className="font-bold">in full-stack development</span>, cloud technologies, and advanced system integration&mdash;ensuring your business thrives in the digital era.
             </p>
 
-            <p className="about-desc">
-             We specialize<span className="bold"> infull-stack development</span>, cloud technologies, and advanced system integration—ensuring your business thrives in the digital era.
-            </p>
-
-            <button className="about-btn">READ MORE</button>
+            <button
+              type="button"
+              className="w-fit rounded-full bg-gradient-to-r from-brand-purple to-[#ff00ff] text-white font-semibold cursor-pointer transition duration-300 px-7 py-3 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(255,0,255,0.35)]"
+            >
+              READ MORE
+            </button>
           </div>
         </div>
 
-        <div className="about-workflow-container">
+        {/* WORKFLOW — horizontal scroll mobile, grid md+ */}
+        <div className="w-full max-w-container mx-auto px-6 md:px-page mt-12 md:mt-16 flex overflow-x-auto snap-x snap-mandatory gap-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-3">
           {steps.map((step, index) => (
-            <div className="about-workflow-wrapper" key={index}>
-              <div className="about-step-icon">
-                <img src={step.image} alt={step.title} />
+            <div
+              className="snap-start flex-shrink-0 w-[260px] md:w-full md:max-w-[320px] md:justify-self-center md:last:col-span-2 lg:last:col-span-1 relative pt-9 flex justify-center"
+              key={index}
+            >
+              {/* Floating hexagon icon */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 size-[90px]">
+                <img
+                  src={hexagon}
+                  alt=""
+                  className="w-full h-full object-contain [filter:drop-shadow(0_0_10px_rgba(168,85,247,0.4))]"
+                />
               </div>
 
-              <div
-                className="about-workflow-card"
-                style={{
-                  clipPath:
-                    "path('M 32,0 L 96,0 C 116,0 108,22 128,22 L 192,22 C 212,22 204,0 224,0 L 288,0 Q 320,0 320,32 L 320,268 Q 320,288 288,288 L 32,288 Q 0,288 0,268 L 0,32 Q 0,0 32,0 Z')",
-                }}
-              >
-                <div className="about-workflow-glow"></div>
+              {/* GlassCard — rectangular with rounded corners, overflow-hidden clips edge artifacts */}
+              <GlassCard className="!w-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]">
+                <div className="relative min-h-[240px] md:min-h-[280px] overflow-hidden flex flex-col justify-center items-center text-center pt-12 pb-6 px-6">
+                  {/* Inner radial glow */}
+                  <div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
+                    style={{ background: innerGlow }}
+                  />
 
-                <div className="about-workflow-content">
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
+                  <h3 className="relative text-3xl md:text-5xl font-bold mb-2 md:mb-3 leading-tight">
+                    {step.title}
+                  </h3>
+                  <p className="relative text-xs md:text-sm text-fg-muted leading-relaxed max-w-[22ch]">
+                    {step.text}
+                  </p>
                 </div>
-              </div>
+              </GlassCard>
             </div>
           ))}
         </div>
 
-        <div className="about-client-section">
-          <p className="about-subtitle-our">
-            OUR <span>CLIENT</span>
-          </p>
+        {/* CLIENT MARQUEE */}
+        <div>
+          <h2 className="tracking-[6px] text-center mt-24 font-thin text-lg md:text-xl uppercase">
+            OUR <span className="text-accent-pink font-bold">CLIENT</span>
+          </h2>
           <Client />
         </div>
       </div>
     </section>
   );
 }
-

@@ -6,7 +6,7 @@ import {
     GlassInput,
 } from "react-glass-ui";
 
-import faqLogo from "../../../../assets/Faqimage.png";
+import faqLogo from "../../../../assets/Faqimage.webp";
 
 const faqData = [
     {

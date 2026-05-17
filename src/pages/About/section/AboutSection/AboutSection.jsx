@@ -1,10 +1,10 @@
 import "./AboutSection.css";
-import robotImg from "../../../../assets/aboutRobot.png";
-import bgImage from "../../../../assets/quotesBG.png";
+import robotImg from "../../../../assets/aboutRobot.webp";
+import bgImage from "../../../../assets/quotesBG.webp";
 
-import hexagon1 from "../../../../assets/tinyhex.png";
-import hexagon2 from "../../../../assets/tinyhex.png";
-import hexagon3 from "../../../../assets/tinyhex.png";
+import hexagon1 from "../../../../assets/tinyhex.webp";
+import hexagon2 from "../../../../assets/tinyhex.webp";
+import hexagon3 from "../../../../assets/tinyhex.webp";
 
 
 const steps = [

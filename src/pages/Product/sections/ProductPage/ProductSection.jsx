@@ -1,8 +1,8 @@
 import "./ProductSection.css";
-import logo1 from "../../../../assets/logohriesnew.png";
-import logo2 from "../../../../assets/logobeilpos.png";
-import logo3 from "../../../../assets/logofunnevnew.png"
-import bgImage from "../../../../assets/productsecBG.png";
+import logo1 from "../../../../assets/logohriesnew.webp";
+import logo2 from "../../../../assets/logobeilpos.webp";
+import logo3 from "../../../../assets/logofunnevnew.webp"
+import bgImage from "../../../../assets/productsecBG.webp";
 import * as GlassUI from "react-glass-ui";
 
 

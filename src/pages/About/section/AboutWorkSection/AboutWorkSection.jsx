@@ -2,10 +2,10 @@
 
 import "./AboutWorkSection.css";
 
-import work1 from "../../../../assets/codefy.png";
-import work2 from "../../../../assets/mrtek.png";
-import work3 from "../../../../assets/harmain.png";
-import work4 from "../../../../assets/ramstainless.png";
+import work1 from "../../../../assets/codefy.webp";
+import work2 from "../../../../assets/mrtek.webp";
+import work3 from "../../../../assets/harmain.webp";
+import work4 from "../../../../assets/ramstainless.webp";
 
 const works = [
     {
