@@ -1,58 +1,81 @@
-import React from "react";
-import "./ServiceWorks.css"
+import { GlassCard } from "react-glass-ui";
+
+const steps = [
+  {
+    title: "Requirement & Consultation",
+    desc: "We discuss your business goals, target users, and technical requirements to ensure the right website solution from the start.",
+  },
+  {
+    title: "UI/UX Design",
+    desc: "We design a clean, modern, and responsive interface focused on usability, branding, and user experience.",
+  },
+  {
+    title: "Development",
+    desc: "We develop your website using clean code, modern frameworks, and performance-focused architecture.",
+  },
+  {
+    title: "Launch & Optimization",
+    desc: "We deploy, test, and optimize your website to ensure speed, security, and long-term stability.",
+  },
+];
+
+const innerCardGlow =
+  "radial-gradient(circle, rgba(168,85,247,0.22) 0%, transparent 70%)";
 
 export default function ServiceWorks() {
-    return (
-        <section className="workflowsec-wrapper">
-            <div className="workflowsec-overlay"></div>
+  return (
+    // Top transparent so ServiceSection BG can bleed through; gradient fades to bg-ink
+    <section className="relative overflow-hidden w-full py-section">
+      {/* Gradient bg — transparent at top (shows ServiceSection BG), solid ink after 400px */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{ background: "linear-gradient(to bottom, transparent 0px, #040414 400px)" }}
+      />
 
-            <div className="workflowsec-container">
-                <p className="workflowsec-subtitle">
-                    HOW IT <span>WORKS</span>
-                </p>
+      <div className="relative z-[2] w-full max-w-container mx-auto px-page">
+        {/* HEADER — left-aligned */}
+        <div className="flex flex-col gap-4 lg:gap-5 max-w-[760px] text-left items-start">
+          <h2 className="tracking-[6px] font-thin text-lg md:text-xl uppercase">
+            HOW IT <span className="text-accent-pink font-bold">WORKS</span>
+          </h2>
 
-                <h2 className="workflowsec-title">
-                    WEBSITE DEVELOPMENT PROCESS
-                </h2>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl leading-tight font-bold">
+            WEBSITE DEVELOPMENT PROCESS
+          </h3>
 
-                <p className="workflowsec-description">
-                    A Structured And Transparent Workflow To Deliver High-Quality,
-                    Scalable, And Reliable Websites Tailored To Your Business Needs.
-                </p>
+          <p className="text-sm md:text-base text-fg-muted leading-relaxed lg:max-w-prose">
+            A Structured And Transparent Workflow To Deliver High-Quality,
+            Scalable, And Reliable Websites Tailored To Your Business Needs.
+          </p>
+        </div>
 
-                <div className="workflowsec-slider">
-                    {[
-                        {
-                            title: "Requirement & Consultation",
-                            desc: "We discuss your business goals, target users, and technical requirements to ensure the right website solution from the start.",
-                        },
-                        {
-                            title: "UI/UX Design",
-                            desc: "We design a clean, modern, and responsive interface focused on usability, branding, and user experience.",
-                        },
-                        {
-                            title: "Development",
-                            desc: "We develop your website using clean code, modern frameworks, and performance-focused architecture.",
-                        },
-                        {
-                            title: "Launch & Optimization",
-                            desc: "We deploy, test, and optimize your website to ensure speed, security, and long-term stability.",
-                        },
-                    ].map((item, index) => (
-                        <div
-                            key={index}
-                            className="workflowsec-card"
-                            style={{
-                                clipPath:
-                                    "path('M 24,0 Q 0,0 0,24 L 0,196 Q 0,220 24,220 L 256,220 Q 280,220 280,196 L 280,24 Q 280,0 256,0 L 198,0 Q 188,0 184,14 Q 180,22 168,22 L 112,22 Q 100,22 96,14 Q 92,0 82,0 Z')",
-                            }}
-                        >
-                            <h3>{item.title}</h3>
-                            <p>{item.desc}</p>
-                        </div>
-                    ))}
+        {/* WORKFLOW CARDS — flex scroll mobile/md, grid at lg+ */}
+        <div className="mt-12 md:mt-16 flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible text-white">
+          {steps.map((step, index) => (
+            <article
+              key={index}
+              className="snap-start flex-shrink-0 w-[260px] md:w-[280px] lg:w-full"
+            >
+              <GlassCard className="!w-full !h-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]">
+                <div className="relative min-h-[220px] md:min-h-[240px] overflow-hidden flex flex-col justify-center text-center p-6">
+                  {/* Inner radial glow */}
+                  <div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
+                    style={{ background: innerCardGlow }}
+                  />
+
+                  <h4 className="relative text-lg md:text-xl font-bold mb-3">
+                    {step.title}
+                  </h4>
+                  <p className="relative text-xs md:text-sm text-fg-muted leading-relaxed">
+                    {step.desc}
+                  </p>
                 </div>
-            </div>
-        </section>
-    )
+              </GlassCard>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

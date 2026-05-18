@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { GlassCard } from "react-glass-ui";
 import footerBg from "../../../assets/footerimagenew.webp";
 
@@ -15,22 +16,19 @@ export default function Footer() {
                     SCALABLE, FUTURE READY TECHNOLOGY.
                 </p>
 
-                {/* GET STARTED — glass effect via GlassCard */}
-                <div className="inline-flex transition-transform duration-300 hover:-translate-y-1">
+                {/* GET STARTED — glass + thin border, routes to /contact */}
+                <Link to="/contact" className="inline-flex transition-transform duration-300 hover:-translate-y-1">
                     <GlassCard className="!rounded-full overflow-hidden">
-                        <button
-                            type="button"
-                            className="px-8 py-3 bg-transparent border-0 text-white text-sm font-semibold tracking-wide cursor-pointer transition duration-300 hover:opacity-85"
-                        >
+                        <span className="block px-8 py-3 text-white text-sm font-semibold tracking-wide transition duration-300 hover:opacity-85">
                             GET STARTED
-                        </button>
+                        </span>
                     </GlassCard>
-                </div>
+                </Link>
             </div>
 
-            {/* FOOTER BOTTOM — company info with bg image */}
+            {/* FOOTER BOTTOM — bg image always covers (responsive, no floating gap) */}
             <div
-                className="relative w-full min-h-[340px] md:min-h-[420px] flex flex-col justify-center items-center text-center pt-24 pb-5 px-page bg-ink bg-cover md:bg-[length:100%_auto] bg-no-repeat bg-top"
+                className="relative w-full min-h-[340px] md:min-h-[420px] flex flex-col justify-center items-center text-center pt-24 pb-5 px-page bg-ink bg-cover bg-no-repeat bg-top xl:bg-[length:100%_auto]"
                 style={{ backgroundImage: `url(${footerBg})` }}
             >
                 {/* Info */}

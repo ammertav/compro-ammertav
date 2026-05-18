@@ -44,15 +44,16 @@ const clients = [
   },
 ];
 
-// No bgImage prop → ClientShowcase falls back to bg-ink solid
-// topGradient → smooth transition from ProductSection's dark bg image above
-export default function ProductClient() {
+// No bgImage, no topGradient — section above (ServiceWorks) already ends on bg-ink.
+// Reduced vertical padding vs default py-section, per design request.
+export default function ServiceClient() {
   return (
     <ClientShowcase
       clients={clients}
-      topGradient
+      paddingY="py-12 md:py-16"
       showCardBorder
-      showOverlayGlow="left"
+      showOverlayGlow
+      glowBleed
     />
   );
 }

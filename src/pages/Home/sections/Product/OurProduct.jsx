@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import { GlassCard } from "react-glass-ui";
 
-import product1 from "../../../../assets/logohriesnew.webp";
-import product2 from "../../../../assets/logobeilpos.webp";
+import product1 from "../../../../assets/logohriesnew.png";
+import product2 from "../../../../assets/logobeilpos.png";
 import product3 from "../../../../assets/logofunnevnew.webp";
 
 const products = [
@@ -14,7 +15,7 @@ const products = [
   },
   {
     id: 2,
-    title: "Beil POS",
+    title: "BePOS",
     image: product2,
     description:
       "A modern POS system with multi-store support, real-time transaction tracking, and flexible payment integration.",
@@ -58,12 +59,13 @@ export default function OurProduct() {
               And CRM To Professional Websites&mdash;All In One Platform!
             </p>
 
-            <button
-              type="button"
-              className="self-end w-fit rounded-full bg-gradient-to-r from-brand-purple to-[#ff00ff] text-white font-semibold cursor-pointer transition duration-300 px-7 py-3 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(255,0,255,0.35)]"
-            >
-              READ MORE
-            </button>
+            <Link to="/product" className="self-end inline-flex transition-transform duration-300 hover:-translate-y-0.5">
+              <GlassCard className="!rounded-full overflow-hidden">
+                <span className="block px-7 py-3 text-white font-semibold tracking-wide transition duration-300 hover:opacity-85">
+                  READ MORE
+                </span>
+              </GlassCard>
+            </Link>
           </div>
         </div>
 
@@ -79,7 +81,7 @@ export default function OurProduct() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-[72%] max-w-full h-auto object-contain"
+                  className="w-[100%] max-w-full h-auto object-contain"
                 />
               </div>
 

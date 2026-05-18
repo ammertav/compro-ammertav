@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { GlassCard } from "react-glass-ui";
 
 import ServiceCard from "../../../../components/ui/ServiceCard/ServiceCard";
@@ -48,16 +49,13 @@ export default function Hero() {
                         <span className="font-bold not-italic">into effortless</span> possibilities.
                     </h1>
 
-                    <div className="mt-8 inline-flex">
+                    <Link to="/contact" className="mt-8 inline-flex transition-transform duration-300 hover:-translate-y-0.5">
                         <GlassCard className="!rounded-full overflow-hidden">
-                            <button
-                                type="button"
-                                className="px-7 py-3.5 bg-transparent border-0 text-white font-semibold tracking-wide cursor-pointer transition duration-300 hover:opacity-85"
-                            >
+                            <span className="block px-7 py-3.5 text-white font-semibold tracking-wide transition duration-300 hover:opacity-85">
                                 GET STARTED
-                            </button>
+                            </span>
                         </GlassCard>
-                    </div>
+                    </Link>
                 </div>
 
                 <div className="w-full md:w-auto flex justify-center">

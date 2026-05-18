@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { GlassCard } from "react-glass-ui";
 import Client from "./Client";
 
@@ -61,12 +62,13 @@ export default function About() {
               We specialize <span className="font-bold">in full-stack development</span>, cloud technologies, and advanced system integration&mdash;ensuring your business thrives in the digital era.
             </p>
 
-            <button
-              type="button"
-              className="w-fit rounded-full bg-gradient-to-r from-brand-purple to-[#ff00ff] text-white font-semibold cursor-pointer transition duration-300 px-7 py-3 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(255,0,255,0.35)]"
-            >
-              READ MORE
-            </button>
+            <Link to="/about-us" className="inline-flex transition-transform duration-300 hover:-translate-y-0.5">
+              <GlassCard className="!rounded-full overflow-hidden">
+                <span className="block px-7 py-3 text-white font-semibold tracking-wide transition duration-300 hover:opacity-85">
+                  READ MORE
+                </span>
+              </GlassCard>
+            </Link>
           </div>
         </div>
 

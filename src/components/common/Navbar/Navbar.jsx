@@ -1,7 +1,7 @@
 import { useState } from "react";
-import logo from "../../../assets/ammertavlogo.webp";
+import logo from "../../../assets/ammertavlogo.png";
 import { GlassCard } from "react-glass-ui";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const navItems = [
     { to: "/", label: "Home" },
@@ -45,7 +45,15 @@ function HamburgerIcon({ open }) {
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const { pathname } = useLocation();
     const close = () => setOpen(false);
+
+    // Clicking a NavLink that points to the current route doesn't trigger the
+    // global ScrollToTop (pathname doesn't change) — force scroll-to-top here.
+    const handleNavClick = (to) => () => {
+        if (pathname === to) window.scrollTo(0, 0);
+        close();
+    };
 
     return (
         <header className="fixed top-3 md:top-5 left-0 w-full z-[1000] px-3.5 md:px-5 box-border">
@@ -53,14 +61,14 @@ export default function Navbar() {
                 <GlassCard className="!w-full !rounded-3xl overflow-hidden">
                     {/* TOP ROW */}
                     <div className="w-full flex items-center justify-between gap-3 px-4 py-3 md:px-6 md:py-4 lg:px-8">
-                        {/* LOGO */}
-                        <div className="flex-shrink-0 flex items-center">
+                        {/* LOGO — routes to home */}
+                        <Link to="/" onClick={handleNavClick("/")} className="flex-shrink-0 flex items-center" aria-label="Ammertav home">
                             <img
                                 src={logo}
                                 alt="logo"
-                                className="h-auto object-contain w-[78px] md:w-[95px] lg:w-[110px]"
+                                className="h-auto object-contain w-[110px] md:w-[124px] lg:w-[136px]"
                             />
-                        </div>
+                        </Link>
 
                         {/* DESKTOP NAV */}
                         <nav className="hidden md:flex flex-1 justify-center">
@@ -69,6 +77,7 @@ export default function Navbar() {
                                     <li key={item.to}>
                                         <NavLink
                                             to={item.to}
+                                            onClick={handleNavClick(item.to)}
                                             className={({ isActive }) =>
                                                 `${linkBase} ${isActive ? linkActive : ""}`
                                             }
@@ -85,6 +94,7 @@ export default function Navbar() {
                             {/* CONNECT US — desktop only */}
                             <NavLink
                                 to="/contact"
+                                onClick={handleNavClick("/contact")}
                                 className="hidden md:inline-flex items-center justify-center rounded-full text-white font-semibold cursor-pointer transition-all duration-300 bg-gradient-to-r from-brand-purple to-brand-violet text-xs md:px-5 md:py-3 lg:px-6 lg:text-sm hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(157,78,221,0.3)]"
                             >
                                 CONNECT US
@@ -111,7 +121,7 @@ export default function Navbar() {
                                     <li key={item.to}>
                                         <NavLink
                                             to={item.to}
-                                            onClick={close}
+                                            onClick={handleNavClick(item.to)}
                                             className={({ isActive }) =>
                                                 `block px-4 py-3 rounded-xl text-white font-medium transition-colors ${
                                                     isActive
@@ -127,7 +137,7 @@ export default function Navbar() {
                                 <li className="mt-2">
                                     <NavLink
                                         to="/contact"
-                                        onClick={close}
+                                        onClick={handleNavClick("/contact")}
                                         className="block text-center px-4 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-brand-purple to-brand-violet"
                                     >
                                         CONNECT US
