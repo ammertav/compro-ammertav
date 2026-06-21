@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../../../assets/ammertavlogo.png";
+import logo from "../../../assets/ammertavlogo.webp";
 import { GlassCard } from "react-glass-ui";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
@@ -66,6 +66,7 @@ export default function Navbar() {
                             <img
                                 src={logo}
                                 alt="logo"
+                                decoding="async"
                                 className="h-auto object-contain w-[110px] md:w-[124px] lg:w-[136px]"
                             />
                         </Link>

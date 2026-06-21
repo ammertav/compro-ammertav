@@ -51,7 +51,7 @@ export default function ServiceSection() {
               className="flex items-center gap-3 p-4 w-full bg-transparent border-0 text-white text-xs md:text-sm font-semibold cursor-pointer"
             >
               <div className="w-6 flex-shrink-0">
-                <img src={service.icon} alt="" />
+                <img src={service.icon} alt="" loading="lazy" decoding="async" />
               </div>
               <span className="text-left leading-snug">{service.label}</span>
             </button>
@@ -80,6 +80,8 @@ export default function ServiceSection() {
               <img
                 src={robot}
                 alt="robot"
+                fetchPriority="high"
+                decoding="async"
                 className="max-w-full h-auto w-64 md:w-48 lg:w-80 [filter:drop-shadow(0_0_25px_rgba(168,85,247,0.3))]"
               />
             </div>

@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { GlassCard } from "react-glass-ui";
-import footerBg from "../../../assets/footerimagenew.webp";
+import SectionOrbs from "../../background/SectionOrbs";
+import { ORB_CONFIG } from "../../background/orbConfig";
 
 export default function Footer() {
     return (
-        <footer className="relative w-full overflow-hidden bg-ink text-white">
+        <footer className="relative w-full text-white">
+            <SectionOrbs config={ORB_CONFIG.footer} />
+
             {/* CTA SECTION */}
-            <div className="flex flex-col items-center text-center py-10 px-page">
+            <div className="relative z-[2] flex flex-col items-center text-center py-10 px-page">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 max-w-[1000px]">
                     &ldquo;READY TO START YOUR OWN PROJECT?&rdquo;
                 </h2>
@@ -26,10 +29,9 @@ export default function Footer() {
                 </Link>
             </div>
 
-            {/* FOOTER BOTTOM — bg image always covers (responsive, no floating gap) */}
+            {/* FOOTER BOTTOM */}
             <div
-                className="relative w-full min-h-[340px] md:min-h-[420px] flex flex-col justify-center items-center text-center pt-24 pb-5 px-page bg-ink bg-cover bg-no-repeat bg-top xl:bg-[length:100%_auto]"
-                style={{ backgroundImage: `url(${footerBg})` }}
+                className="relative z-[2] w-full min-h-[340px] md:min-h-[420px] flex flex-col justify-center items-center text-center pt-24 pb-5 px-page"
             >
                 {/* Info */}
                 <div className="relative z-[2] flex flex-col items-center">

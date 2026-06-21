@@ -1,11 +1,10 @@
 import ClientShowcase from "../../../../components/common/ClientShowcase/ClientShowcase";
 
-import client1 from "../../../../assets/logohriesnew.png";
-import client2 from "../../../../assets/logobeilpos.png";
+import client1 from "../../../../assets/logohriesnew.webp";
+import client2 from "../../../../assets/logobeilpos.webp";
 import client3 from "../../../../assets/logofunnevnew.webp";
 import client4 from "../../../../assets/logofunnevnew.webp";
 import client5 from "../../../../assets/logofunnevnew.webp";
-import bgImage from "../../../../assets/ourclientBG.webp";
 
 const clients = [
   {
@@ -46,5 +45,5 @@ const clients = [
 ];
 
 export default function OurClient() {
-  return <ClientShowcase clients={clients} bgImage={bgImage} />;
+  return <ClientShowcase clients={clients} />;
 }

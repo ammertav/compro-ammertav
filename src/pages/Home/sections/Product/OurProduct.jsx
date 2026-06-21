@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { GlassCard } from "react-glass-ui";
+import useDragScroll from "../../../../hooks/useDragScroll";
+import SectionOrbs from "../../../../components/background/SectionOrbs";
+import { ORB_CONFIG } from "../../../../components/background/orbConfig";
 
-import product1 from "../../../../assets/logohriesnew.png";
-import product2 from "../../../../assets/logobeilpos.png";
+import product1 from "../../../../assets/logohriesnew.webp";
+import product2 from "../../../../assets/logobeilpos.webp";
 import product3 from "../../../../assets/logofunnevnew.webp";
 
 const products = [
@@ -32,14 +35,11 @@ const products = [
 const innerCardGlow = "radial-gradient(circle, rgba(168,85,247,0.22) 0%, transparent 70%)";
 
 export default function OurProduct() {
+  const dragRef = useDragScroll();
+
   return (
-    // Top transparent so OurService BG can bleed through; gradient fades to bg-ink
-    <section className="relative overflow-hidden w-full pt-8 md:pt-12 lg:pt-28 pb-6 ">
-      {/* Gradient bg — transparent at top (shows OurService BG), solid ink after 400px */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{ background: "linear-gradient(to bottom, transparent 0px, #040414 400px)" }}
-      />
+    <section className="relative w-full pt-8 md:pt-12 lg:pt-28 pb-6 ">
+      <SectionOrbs config={ORB_CONFIG.product} />
 
       <div className="relative z-[2] w-full max-w-container mx-auto">
         {/* HEADER — right-aligned, no glass at mobile */}
@@ -70,15 +70,16 @@ export default function OurProduct() {
         </div>
 
         {/* PRODUCT CARDS — flex scroll up to lg, grid at lg+ (same as workflow) */}
-        <div className="mt-12 md:mt-16 px-6 md:px-page flex overflow-x-auto snap-x snap-mandatory gap-8 md:gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:gap-16 lg:overflow-visible">
+        <div ref={dragRef} className="mt-12 md:mt-16 px-6 md:px-page flex overflow-x-auto gap-8 md:gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:gap-16 lg:overflow-visible">
           {products.map((item) => (
             <article
+              data-cursor="view"
               className="snap-start flex-shrink-0 w-[260px] lg:w-full relative pt-10 flex justify-center"
               key={item.id}
             >
               {/* Floating logo — white circle on top of card */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 size-16 md:size-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
-                <img
+                <img loading="lazy" decoding="async"
                   src={item.image}
                   alt={item.title}
                   className="w-[100%] max-w-full h-auto object-contain"

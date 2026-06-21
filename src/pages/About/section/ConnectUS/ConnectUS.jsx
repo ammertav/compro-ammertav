@@ -203,7 +203,7 @@ export default function ConnectUS() {
 
             {/* RIGHT — IMAGE */}
             <div className="flex justify-center items-center w-full">
-              <img
+              <img loading="lazy" decoding="async"
                 src={faqLogo}
                 alt="FAQ"
                 className="w-[clamp(220px,34vw,420px)] max-w-full h-auto object-contain [filter:drop-shadow(0_0_45px_rgba(140,0,255,0.45))]"

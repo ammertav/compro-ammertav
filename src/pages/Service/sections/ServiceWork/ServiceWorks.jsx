@@ -1,4 +1,5 @@
 import { GlassCard } from "react-glass-ui";
+import useDragScroll from "../../../../hooks/useDragScroll";
 
 const steps = [
   {
@@ -23,6 +24,8 @@ const innerCardGlow =
   "radial-gradient(circle, rgba(168,85,247,0.22) 0%, transparent 70%)";
 
 export default function ServiceWorks() {
+  const dragRef = useDragScroll();
+
   return (
     // Top transparent so ServiceSection BG can bleed through; gradient fades to bg-ink
     <section className="relative overflow-hidden w-full py-section">
@@ -50,7 +53,7 @@ export default function ServiceWorks() {
         </div>
 
         {/* WORKFLOW CARDS — flex scroll mobile/md, grid at lg+ */}
-        <div className="mt-12 md:mt-16 flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible text-white">
+        <div ref={dragRef} className="mt-12 md:mt-16 flex overflow-x-auto gap-6 md:gap-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible text-white">
           {steps.map((step, index) => (
             <article
               key={index}

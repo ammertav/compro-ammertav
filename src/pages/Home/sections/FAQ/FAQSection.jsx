@@ -1,5 +1,7 @@
 import { useState } from "react";
 import faqimage from "../../../../assets/Faqimage.webp";
+import SectionOrbs from "../../../../components/background/SectionOrbs";
+import { ORB_CONFIG } from "../../../../components/background/orbConfig";
 
 const faqData = [
   {
@@ -42,7 +44,9 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="relative w-full bg-ink text-white py-section overflow-hidden">
+    <section className="relative w-full text-white py-section">
+      <SectionOrbs config={ORB_CONFIG.faq} />
+
       <div className="relative z-[2] w-full max-w-container mx-auto px-page">
         {/* HEADER — left-aligned at all viewports */}
         <div className="flex flex-col gap-4 lg:gap-5 max-w-[850px] text-left items-start mb-12 md:mb-16">
@@ -102,7 +106,7 @@ export default function FAQSection() {
 
           {/* IMAGE — first at mobile/md (top), right column at lg+ */}
           <div className="order-first lg:order-2 flex justify-center">
-            <img
+            <img loading="lazy" decoding="async"
               src={faqimage}
               alt="FAQ"
               className="max-w-full h-auto object-contain [filter:drop-shadow(0_0_45px_rgba(140,0,255,0.45))] w-44 md:w-56 lg:w-80 xl:w-96"

@@ -23,7 +23,7 @@ export default function Client() {
                 key={index}
                 className="flex-shrink-0 flex justify-center items-center w-[92px] mx-[12px] md:w-[110px] md:mx-4 lg:w-[125px] lg:mx-[clamp(14px,2vw,28px)] xl:w-[138px] 3xl:w-[150px] 3xl:mx-7"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={logo}
                   alt={`client-${index}`}
                   className="w-auto max-w-full object-contain transition-transform duration-300 hover:scale-[1.08] h-7 md:h-[34px] lg:h-[clamp(32px,4vw,48px)] 3xl:h-12"

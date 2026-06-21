@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, lazy } from "react";
 import {
   BrowserRouter,
   Routes,
@@ -8,10 +8,14 @@ import {
 
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home";
-import Product from "../pages/Product/Product";
-import Service from "../pages/Service/Service";
-import AboutUs from "../pages/About/About";
-import ConnectUS from "../pages/About/section/ConnectUS/ConnectUS";
+
+// Secondary pages are code-split: their JS only downloads when the route is
+// visited, keeping the initial (Home) bundle small. Home stays eager since it
+// is the primary landing page.
+const Product = lazy(() => import("../pages/Product/Product"));
+const Service = lazy(() => import("../pages/Service/Service"));
+const AboutUs = lazy(() => import("../pages/About/About"));
+const ConnectUS = lazy(() => import("../pages/About/section/ConnectUS/ConnectUS"));
 
 // Reset scroll on every route change — React Router preserves scroll by default.
 function ScrollToTop() {

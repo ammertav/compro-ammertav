@@ -46,7 +46,7 @@ export default function AboutWorkSection() {
             >
               {/* Image card */}
               <div className="relative w-full aspect-[16/10] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-white/25">
-                <img
+                <img loading="lazy" decoding="async"
                   src={work.image}
                   alt={work.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"

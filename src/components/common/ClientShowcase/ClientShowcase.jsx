@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
 import { GlassCard } from "react-glass-ui";
+import useDragScroll from "../../../hooks/useDragScroll";
 
 const innerCardGlow =
   "radial-gradient(circle, rgba(168,85,247,0.22) 0%, transparent 70%)";
@@ -39,34 +39,12 @@ export default function ClientShowcase({
   glowBleed = false,
 }) {
   const glowBackground = resolveGlowBackground(showOverlayGlow);
-  const scrollRef = useRef(null);
-
-  // Convert vertical mouse wheel → horizontal scroll, defer at edges to page scroll.
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const handleWheel = (e) => {
-      if (e.deltaY === 0) return;
-      const maxScroll = el.scrollWidth - el.clientWidth;
-      if (maxScroll <= 0) return;
-
-      const atStart = el.scrollLeft <= 0 && e.deltaY < 0;
-      const atEnd = el.scrollLeft >= maxScroll && e.deltaY > 0;
-      if (atStart || atEnd) return;
-
-      e.preventDefault();
-      el.scrollLeft += e.deltaY;
-    };
-
-    el.addEventListener("wheel", handleWheel, { passive: false });
-    return () => el.removeEventListener("wheel", handleWheel);
-  }, []);
+  const scrollRef = useDragScroll();
 
   return (
     <section
-      className={`relative w-full ${glowBleed ? "overflow-visible" : "overflow-hidden"} ${paddingY} bg-ink text-white ${
-        bgImage ? "bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed" : ""
+      className={`relative w-full ${glowBleed ? "overflow-visible" : "overflow-hidden"} ${paddingY} text-white ${
+        bgImage ? "bg-cover bg-center bg-no-repeat" : ""
       }`}
       style={bgImage ? { backgroundImage: `url(${bgImage})` } : undefined}
     >
@@ -109,7 +87,7 @@ export default function ClientShowcase({
         {/* CLIENT CARDS — horizontal scroll, mouse wheel converts to horizontal */}
         <div
           ref={scrollRef}
-          className="mt-12 md:mt-16 flex overflow-x-auto snap-x snap-mandatory gap-8 md:gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-12 md:mt-16 flex overflow-x-auto gap-8 md:gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {clients.map((client) => (
             <div
@@ -118,7 +96,7 @@ export default function ClientShowcase({
             >
               {/* Floating logo — white circle on top of card */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 size-16 md:size-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
-                <img
+                <img loading="lazy" decoding="async"
                   src={client.image}
                   alt={client.title}
                   className="w-[100%] max-w-full h-auto object-contain"

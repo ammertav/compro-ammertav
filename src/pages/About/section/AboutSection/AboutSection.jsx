@@ -1,4 +1,5 @@
 import { GlassCard } from "react-glass-ui";
+import useDragScroll from "../../../../hooks/useDragScroll";
 
 import robotImg from "../../../../assets/aboutRobot.webp";
 import bgImage from "../../../../assets/quotesBG.webp";
@@ -20,6 +21,8 @@ const overlayGlowLeft =
   "radial-gradient(circle 360px at 20% 70%, rgba(186,0,255,0.25), transparent 70%)";
 
 export default function AboutSection() {
+  const dragRef = useDragScroll();
+
   return (
     <section className="relative bg-black text-white">
       {/* BG IMAGE — extends 400px past the section so the bottom of the quotes
@@ -48,7 +51,7 @@ export default function AboutSection() {
         <div className="w-full max-w-container mx-auto px-page grid grid-cols-1 items-center gap-10 md:grid-cols-[auto_1fr] md:gap-8 lg:gap-16">
           {/* Robot */}
           <div className="flex justify-center md:justify-start flex-shrink-0">
-            <img
+            <img loading="lazy" decoding="async"
               src={robotImg}
               alt="robot"
               className="max-w-full h-auto w-64 md:w-48 lg:w-80"
@@ -85,7 +88,7 @@ export default function AboutSection() {
         </div>
 
         {/* WORKFLOW — scroll mobile + md, grid lg+ */}
-        <div className="w-full max-w-container mx-auto px-6 md:px-page mt-12 md:mt-16 flex overflow-x-auto snap-x snap-mandatory gap-8 md:gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible">
+        <div ref={dragRef} className="w-full max-w-container mx-auto px-6 md:px-page mt-12 md:mt-16 flex overflow-x-auto gap-8 md:gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -93,7 +96,7 @@ export default function AboutSection() {
             >
               {/* Floating hexagon icon */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 size-[90px]">
-                <img
+                <img loading="lazy" decoding="async"
                   src={hexagon}
                   alt=""
                   className="w-full h-full object-contain [filter:drop-shadow(0_0_10px_rgba(168,85,247,0.4))]"

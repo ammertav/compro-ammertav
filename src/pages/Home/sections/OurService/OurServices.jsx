@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { GlassCard } from "react-glass-ui";
+import useDragScroll from "../../../../hooks/useDragScroll";
+import SectionOrbs from "../../../../components/background/SectionOrbs";
+import { ORB_CONFIG } from "../../../../components/background/orbConfig";
 
-import bgImage from "../../../../assets/ourserviceBG.webp";
-import arrow from "../../../../assets/arrow.png";
+import arrow from "../../../../assets/arrow.webp";
 import robot from "../../../../assets/robotOurService.webp";
 import build from "../../../../assets/buildOurService.webp";
 import innovation from "../../../../assets/InnovationOurService.webp";
@@ -45,6 +47,8 @@ const services = [
 const innerCardGlow = "radial-gradient(circle, rgba(168,85,247,0.22) 0%, transparent 70%)";
 
 export default function OurServices() {
+  const dragRef = useDragScroll();
+
   // Service content reused at mobile (inside GlassCard) and md+ (plain)
   const renderServiceContent = () => (
     <>
@@ -73,7 +77,7 @@ export default function OurServices() {
               className="flex items-center gap-3 p-4 w-full bg-transparent border-0 text-white text-xs md:text-sm font-semibold cursor-pointer"
             >
               <div className="w-6 flex-shrink-0">
-                <img src={service.icon} alt="" />
+                <img loading="lazy" decoding="async" src={service.icon} alt="" />
               </div>
               <span className="text-left leading-snug">{service.label}</span>
             </button>
@@ -84,8 +88,10 @@ export default function OurServices() {
   );
 
   return (
-    <section className="relative bg-black text-white">
-      {/* HEADER — plain bg-ink */}
+    <section className="relative text-white">
+      <SectionOrbs config={ORB_CONFIG.service} />
+
+      {/* HEADER */}
       <div className="relative z-[3] w-full max-w-container mx-auto px-page pt-4 md:pt-8 flex flex-col items-start gap-3">
         <h2 className="tracking-[6px] font-thin text-lg md:text-xl uppercase">
           HOW WE <span className="text-accent-pink font-bold">WORK</span>
@@ -103,26 +109,12 @@ export default function OurServices() {
         {/* <div className="absolute inset-x-0 bottom-0 h-64 z-[1] pointer-events-none bg-gradient-to-b from-transparent to-ink" /> */}
       </div>
       
-      {/* BG IMAGE AREA — starts from workflow card, extends below into OurProduct */}
+      {/* CONTENT AREA */}
       <div className="relative ">
-        {/* BG image — extends 400px below into OurProduct */}
-        <div
-          className="absolute inset-x-0 top-0 -bottom-[400px] z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${bgImage})` }}
-        />
-
-        {/* Glow overlay */}
-        {/* <div
-          className="absolute inset-x-0 top-0 -bottom-[400px] z-[1] pointer-events-none"
-          style={{ background: overlayGlow }}
-        /> */}
-
-
-
         {/* CONTENT */}
         <div className="relative z-[2] py-4 md:py-8">
           {/* WORKFLOW CARDS — flex scroll up to lg, grid at lg+ */}
-          <div className="w-full max-w-container mx-auto px-6 md:px-page flex overflow-x-auto snap-x snap-mandatory gap-8 md:gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:gap-16 lg:overflow-visible">
+          <div ref={dragRef} className="w-full max-w-container mx-auto px-6 md:px-page flex overflow-x-auto gap-8 md:gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:gap-16 lg:overflow-visible">
             {steps.map((step, index) => (
               <div
                 key={index}
@@ -130,7 +122,7 @@ export default function OurServices() {
               >
                 {/* Floating icon — slightly above the card */}
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 size-20 md:size-28 lg:size-32">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={step.image}
                     alt={step.title}
                     className="w-full h-full object-contain [filter:drop-shadow(0_0_14px_rgba(168,85,247,0.35))]"
@@ -157,7 +149,7 @@ export default function OurServices() {
 
                 {/* Arrow — exactly in middle of gap, responsive sizing */}
                 {index < steps.length - 1 && (
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={arrow}
                     alt=""
                     className="absolute top-1/2 left-full -translate-y-1/2 z-[3] ml-1 lg:ml-2 w-6 md:w-8 lg:w-12"
@@ -171,7 +163,7 @@ export default function OurServices() {
           <div className="w-full max-w-container mx-auto px-page mt-16 md:mt-24 grid grid-cols-1 items-center gap-10 md:grid-cols-[auto_1fr] md:gap-8 lg:gap-16">
             {/* Robot — same responsive pattern as About */}
             <div className="flex justify-center md:justify-start flex-shrink-0">
-              <img
+              <img loading="lazy" decoding="async"
                 src={robot}
                 alt="robot"
                 className="max-w-full h-auto w-64 md:w-48 lg:w-80 [filter:drop-shadow(0_0_25px_rgba(168,85,247,0.3))]"

@@ -3,42 +3,19 @@ import { GlassCard } from "react-glass-ui";
 
 import ServiceCard from "../../../../components/ui/ServiceCard/ServiceCard";
 import Vision from "../Vision/Vision";
+import SectionOrbs from "../../../../components/background/SectionOrbs";
+import { ORB_CONFIG } from "../../../../components/background/orbConfig";
 
-import bgY from "../../../../assets/ammertavBGY.png";
-import robotImg from "../../../../assets/robot.png";
+import robotImg from "../../../../assets/robot.webp";
 import webDev from "../../../../assets/webdev.webp";
 import softwareDev from "../../../../assets/customsoftware.webp";
-import integration from "../../../../assets/System.webp";
+import integration from "../../../../assets/system.webp";
 import consulting from "../../../../assets/itconsul.webp";
-
-const sideFade =
-    "linear-gradient(to right," +
-    "#040414 0%," +
-    "rgba(4,4,20,0.85) 6%," +
-    "transparent 20%," +
-    "transparent 55%," +
-    "rgba(4,4,20,0.3) 70%," +
-    "rgba(4,4,20,0.6) 82%," +
-    "rgba(4,4,20,0.85) 92%," +
-    "#040414 100%)";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden text-fg bg-ink md:min-h-screen">
-            {/* BG IMAGE */}
-            <div
-                className="absolute inset-0 z-0 bg-no-repeat bg-center [background-size:auto_100%]"
-                style={{ backgroundImage: `url(${bgY})` }}
-            />
-
-            {/* SIDE FADE OVERLAY */}
-            <div
-                className="absolute inset-0 z-[1] pointer-events-none"
-                style={{ background: sideFade }}
-            />
-
-            {/* BOTTOM FADE — smooth transition to next section */}
-            <div className="absolute inset-x-0 bottom-0 h-64 z-[1] pointer-events-none bg-gradient-to-b from-transparent to-ink" />
+        <section className="relative text-fg md:min-h-screen">
+            <SectionOrbs config={ORB_CONFIG.hero} />
 
             {/* HERO CONTENT */}
             <div className="relative z-[2] w-full max-w-container mx-auto px-page flex flex-col-reverse items-center text-center gap-4 pt-20 pb-12 md:flex-row md:justify-between md:text-left md:pt-36 md:pb-section">
@@ -62,6 +39,8 @@ export default function Hero() {
                     <img
                         src={robotImg}
                         alt="robot"
+                        fetchPriority="high"
+                        decoding="async"
                         className="max-w-full h-auto w-44 md:w-60 lg:w-[340px]"
                     />
                 </div>

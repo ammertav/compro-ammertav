@@ -1,11 +1,12 @@
 import { GlassCard } from "react-glass-ui";
+import SectionOrbs from "../../../../components/background/SectionOrbs";
+import { ORB_CONFIG } from "../../../../components/background/orbConfig";
 
 import laravel from "../../../../assets/laravel.webp";
 import react from "../../../../assets/react.webp";
 import javascript from "../../../../assets/javascript.webp";
 import mysql from "../../../../assets/mysql.webp";
 import docker from "../../../../assets/docker.webp";
-import quoteBG from "../../../../assets/quotesBG.webp";
 import codeLogo from "../../../../assets/logotech.webp";
 
 const technologies = [
@@ -21,14 +22,12 @@ const hexagonGlow =
 
 export default function OurTechnologies() {
     return (
-        <section className="relative w-full bg-black text-white pb-section">
-            {/* ============ QUOTE — BG full width/height + extends down to title area ============ */}
+        <section className="relative w-full text-white pb-section">
+            <SectionOrbs config={ORB_CONFIG.tech} />
+
+            {/* ============ QUOTE BAND ============ */}
             <div className="relative">
-                {/* BG image — full width, height extends below into main content area */}
-                <div
-                    className="absolute inset-x-0 top-0 -bottom-[100px] md:-bottom-[140px] lg:-bottom-[180px] z-0 bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url(${quoteBG})` }}
-                />
+                <SectionOrbs config={ORB_CONFIG.quote} />
 
                 {/* Quote glass — full viewport width, side borders clipped via clip-path wrapper */}
                 <div className="relative z-[2] w-full pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-24 lg:pb-24">
@@ -80,7 +79,7 @@ export default function OurTechnologies() {
                             >
                                 <div className="flex items-center gap-3 p-4">
                                     <div className="size-12 flex justify-center items-center rounded-xl flex-shrink-0">
-                                        <img
+                                        <img loading="lazy" decoding="async"
                                             src={tech.icon}
                                             alt={tech.name}
                                             className="max-w-full h-auto"
@@ -103,7 +102,7 @@ export default function OurTechnologies() {
                             className="absolute size-[200px] md:size-[360px] lg:size-[440px] rounded-full blur-[40px] pointer-events-none"
                             style={{ background: hexagonGlow }}
                         />
-                        <img
+                        <img loading="lazy" decoding="async"
                             src={codeLogo}
                             alt="Technology Logo"
                             className="relative z-[2] max-w-full h-auto w-44 md:w-72 lg:w-80"

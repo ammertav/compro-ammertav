@@ -1,7 +1,8 @@
 import { GlassCard } from "react-glass-ui";
+import useDragScroll from "../../../../hooks/useDragScroll";
 
-import logo1 from "../../../../assets/logohriesnew.png";
-import logo2 from "../../../../assets/logobeilpos.png";
+import logo1 from "../../../../assets/logohriesnew.webp";
+import logo2 from "../../../../assets/logobeilpos.webp";
 import logo3 from "../../../../assets/logofunnevnew.webp";
 import bgImage from "../../../../assets/productsecBG.webp";
 
@@ -39,6 +40,8 @@ const innerCardGlow =
   "radial-gradient(circle, rgba(168,85,247,0.22) 0%, transparent 70%)";
 
 export default function ProductSection() {
+  const dragRef = useDragScroll();
+
   return (
     <section
       className="relative w-full bg-ink text-white pt-36 pb-24 overflow-hidden bg-cover bg-center bg-no-repeat"
@@ -62,7 +65,7 @@ export default function ProductSection() {
         </div>
 
         {/* PRODUCT CARDS — flex scroll always: 1 card + 1/2 peek of next */}
-        <div className="mt-12 md:mt-16 flex overflow-x-auto snap-x snap-mandatory gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div ref={dragRef} className="mt-12 md:mt-16 flex overflow-x-auto gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {products.map((item, index) => (
             <article
               key={index}
@@ -88,7 +91,7 @@ export default function ProductSection() {
 
                   {/* Logo — LEFT, vertically centered */}
                   <div className="relative self-center flex-shrink-0 size-14 md:size-16 lg:size-32 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={item.logo}
                       alt={item.title}
                       className="w-[100%] max-w-full h-auto object-contain"

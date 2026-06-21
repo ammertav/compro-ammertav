@@ -3,9 +3,9 @@ import { GlassCard } from "react-glass-ui";
 export default function ServiceCard({ title, image, desc }) {
     return (
         <GlassCard className="!rounded-2xl overflow-hidden transition duration-300 hover:-translate-y-1">
-            <div className="flex justify-between items-center p-[4px]">
+            <div data-cursor="view" className="flex justify-between items-center p-[4px]">
                 <div className="flex-shrink-0">
-                    <img
+                    <img loading="lazy" decoding="async"
                         src={image}
                         alt={title}
                         className="h-16 md:h-20 object-contain [filter:drop-shadow(0_0_8px_rgba(157,78,221,0.5))]"
