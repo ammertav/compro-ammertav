@@ -34,18 +34,14 @@ export default function AmbientBackground() {
     const cursorOn = fine && !reduced;
     if (cursorOn) document.body.setAttribute('data-cursor-on', '');
 
-    const orbs = Array.from(document.querySelectorAll('[data-orb]'));
     const lerp = (a, b, t) => a + (b - a) * t;
 
-    let tmx = 0, tmy = 0, mx = 0, my = 0;
     let px = window.innerWidth / 2, py = window.innerHeight / 2;
     let fx = px, fy = py, fw = 26, fh = 26, vis = 0, show = 1;
     let hover = null, kind = null;
 
     const onMove = (e) => {
       px = e.clientX; py = e.clientY;
-      tmx = e.clientX / window.innerWidth - 0.5;
-      tmy = e.clientY / window.innerHeight - 0.5;
     };
     const onOver = (e) => {
       const t =
@@ -57,33 +53,17 @@ export default function AmbientBackground() {
     const onEnter = () => { show = 1; };
     const onLeave = () => { show = 0; };
 
+    // Nothing to animate without the custom cursor (touch / reduced-motion):
+    // skip all listeners + the rAF loop so the component stays fully idle.
+    if (!cursorOn) return;
+
     window.addEventListener('mousemove', onMove, { passive: true });
     document.addEventListener('mouseover', onOver, { passive: true });
     document.addEventListener('mouseenter', onEnter);
     document.addEventListener('mouseleave', onLeave);
 
-    const vh = () => window.innerHeight;
     let raf = 0;
     const tick = () => {
-      // ---- per-section orb parallax ----
-      if (!reduced) {
-        mx = lerp(mx, tmx, 0.06);
-        my = lerp(my, tmy, 0.06);
-        for (const o of orbs) {
-          const d = parseFloat(o.dataset.depth || '0');
-          const s = parseFloat(o.dataset.scroll || '0');
-          let prog = 0;
-          const p = o.parentElement;
-          if (p) {
-            const r = p.getBoundingClientRect();
-            prog = (r.top + r.height / 2 - vh() / 2) / vh();
-          }
-          o.style.transform =
-            'translate3d(' +
-            (mx * d * 70).toFixed(1) + 'px,' +
-            (my * d * 70 - prog * s).toFixed(1) + 'px,0)';
-        }
-      }
       // ---- reticle cursor ----
       if (cursorOn && frame.current) {
         vis = lerp(vis, show, 0.12);

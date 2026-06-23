@@ -28,9 +28,7 @@ export default function SectionOrbs({ config = [] }) {
         <div
           key={i}
           data-orb
-          data-depth={o.depth}
-          data-scroll={o.scroll}
-          className="absolute will-change-transform"
+          className="absolute"
           style={{
             top: o.top,
             left: o.left,
@@ -44,10 +42,8 @@ export default function SectionOrbs({ config = [] }) {
               height: "100%",
               borderRadius: "9999px",
               background: `radial-gradient(circle at 35% 35%, ${o.color} 0%, transparent 68%)`,
-              filter: "blur(55px)",
+              filter: "blur(30px)",
               opacity: `calc(${o.opacity} * var(--orb-i, 0.6))`,
-              animation: `${o.anim} ${o.dur}s ease-in-out infinite`,
-              animationPlayState: "var(--anim-play, running)",
             }}
           />
         </div>
