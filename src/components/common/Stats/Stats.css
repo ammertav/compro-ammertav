@@ -1,0 +1,31 @@
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 0 120px;
+}
+
+.stat-card {
+  width: 180px;
+  height: 160px;
+
+  border-radius: 20px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-card h1 {
+  font-size: 32px;
+}
+
+.stat-card p {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #aaa;
+}
