@@ -68,20 +68,27 @@ export default function OurServices() {
 
       <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-2">
         {services.map((service, index) => (
-          <GlassCard
-            key={index}
-            className="!w-full !rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5"
-          >
-            <button
-              type="button"
-              className="flex items-center w-full gap-3 p-4 text-xs font-semibold text-white bg-transparent border-0 cursor-pointer md:text-sm"
-            >
-              <div className="flex-shrink-0 w-6">
-                <img loading="lazy" decoding="async" src={service.icon} alt="" />
-              </div>
-              <span className="leading-snug text-left">{service.label}</span>
-            </button>
-          </GlassCard>
+          <div
+  key={index}
+  className="!w-full !rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5"
+  style={{
+    background: "rgba(255, 255, 255, 0.08)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    border: "1px solid rgba(255, 255, 255, 0.15)",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+  }}
+>
+  <button
+    type="button"
+    className="flex items-center w-full gap-3 p-4 text-xs font-semibold text-white bg-transparent border-0 cursor-pointer md:text-sm"
+  >
+    <div className="flex-shrink-0 w-6">
+      <img loading="lazy" decoding="async" src={service.icon} alt="" />
+    </div>
+    <span className="leading-snug text-left">{service.label}</span>
+  </button>
+</div>
         ))}
       </div>
     </>
@@ -130,22 +137,31 @@ export default function OurServices() {
                 </div>
 
                 {/* GlassCard — same as About workflow */}
-                <GlassCard className="!w-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]">
-                  <div className="relative min-h-[240px] md:min-h-[280px] overflow-hidden flex flex-col justify-center text-center pt-12 pb-6 px-6">
-                    {/* Inner glow */}
-                    <div
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
-                      style={{ background: innerCardGlow }}
-                    />
+                <div
+  className="!w-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]"
+  style={{
+    background: "rgba(255, 255, 255, 0.08)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    border: "1px solid rgba(255, 255, 255, 0.15)",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+  }}
+>
+  <div className="relative min-h-[240px] md:min-h-[280px] overflow-hidden flex flex-col justify-center text-center pt-12 pb-6 px-6">
+    {/* Inner glow */}
+    <div
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
+      style={{ background: innerCardGlow }}
+    />
 
-                    <h4 className="relative mb-2 text-xl font-bold md:text-2xl md:mb-3">
-                      {step.title}
-                    </h4>
-                    <p className="relative text-xs leading-relaxed md:text-sm text-fg-muted">
-                      {step.text}
-                    </p>
-                  </div>
-                </GlassCard>
+    <h4 className="relative mb-2 text-xl font-bold md:text-2xl md:mb-3">
+      {step.title}
+    </h4>
+    <p className="relative text-xs leading-relaxed md:text-sm text-fg-muted">
+      {step.text}
+    </p>
+  </div>
+</div>
 
                 {/* Arrow — exactly in middle of gap, responsive sizing */}
                 {index < steps.length - 1 && (

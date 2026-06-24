@@ -87,22 +87,31 @@ export default function OurProduct() {
               </div>
 
               {/* GlassCard */}
-              <GlassCard className="!w-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]">
-                <div className="relative min-h-[260px] md:min-h-[280px] overflow-hidden flex flex-col justify-center text-center pt-12 pb-6 px-6">
-                  {/* Inner radial glow */}
-                  <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
-                    style={{ background: innerCardGlow }}
-                  />
+              <div
+  className="!w-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]"
+  style={{
+    background: "rgba(255, 255, 255, 0.08)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    border: "1px solid rgba(255, 255, 255, 0.15)",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+  }}
+>
+  <div className="relative min-h-[260px] md:min-h-[280px] overflow-hidden flex flex-col justify-center text-center pt-12 pb-6 px-6">
+    {/* Inner radial glow */}
+    <div
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
+      style={{ background: innerCardGlow }}
+    />
 
-                  <h3 className="relative mb-2 text-xl font-bold md:text-2xl md:mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="relative text-xs leading-relaxed md:text-sm text-fg-muted">
-                    {item.description}
-                  </p>
-                </div>
-              </GlassCard>
+    <h3 className="relative mb-2 text-xl font-bold md:text-2xl md:mb-3">
+      {item.title}
+    </h3>
+    <p className="relative text-xs leading-relaxed md:text-sm text-fg-muted">
+      {item.description}
+    </p>
+  </div>
+</div>
             </article>
           ))}
         </div>

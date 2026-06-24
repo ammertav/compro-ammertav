@@ -1,4 +1,3 @@
-import { GlassCard } from "react-glass-ui";
 import useDragScroll from "../../../../hooks/useDragScroll";
 
 import robotImg from "../../../../assets/aboutRobot.webp";
@@ -108,22 +107,31 @@ export default function AboutSection() {
                 />
               </div>
 
-              <GlassCard className="!w-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]">
-                <div className="relative min-h-[240px] md:min-h-[280px] overflow-hidden flex flex-col justify-center items-center text-center pt-12 pb-6 px-6">
-                  <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
-                    style={{ background: innerGlow }}
-                  />
+              <div
+  className="!w-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]"
+  style={{
+    background: "rgba(255, 255, 255, 0.08)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    border: "1px solid rgba(255, 255, 255, 0.15)",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+  }}
+>
+  <div className="relative min-h-[240px] md:min-h-[280px] overflow-hidden flex flex-col justify-center items-center text-center pt-12 pb-6 px-6">
+    <div
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
+      style={{ background: innerGlow }}
+    />
 
-                  <h3 className="relative mb-2 text-3xl font-bold leading-tight md:text-5xl md:mb-3">
-                    {step.title}
-                  </h3>
+    <h3 className="relative mb-2 text-3xl font-bold leading-tight md:text-5xl md:mb-3">
+      {step.title}
+    </h3>
 
-                  <p className="relative text-xs md:text-sm text-fg-muted leading-relaxed max-w-[22ch]">
-                    {step.text}
-                  </p>
-                </div>
-              </GlassCard>
+    <p className="relative text-xs md:text-sm text-fg-muted leading-relaxed max-w-[22ch]">
+      {step.text}
+    </p>
+  </div>
+</div>
             </div>
           ))}
         </div>

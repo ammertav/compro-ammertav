@@ -34,14 +34,14 @@ export default function OurTechnologies() {
                     {/* clip-path wrapper crops 2px from left/right — hides side borders regardless of how library renders them */}
                     <div className="[clip-path:inset(0_2px)]">
                         <GlassCard className="!w-full !rounded-none overflow-hidden">
-                            <div className="px-page py-8 md:py-12 flex flex-col items-center text-center">
+                            <div className="flex flex-col items-center py-8 text-center px-page md:py-12">
                                 <h2 className="text-xl md:text-2xl lg:text-3xl font-bold leading-snug max-w-[60ch]">
                                     &ldquo;The best way to predict the future is to invent it.&rdquo;
                                 </h2>
 
-                                <div className="flex items-center justify-center gap-4 w-full mt-5 md:mt-6 max-w-container">
+                                <div className="flex items-center justify-center w-full gap-4 mt-5 md:mt-6 max-w-container">
                                     <div className="flex-1 max-w-[180px] h-px bg-white/[0.45]"></div>
-                                    <span className="text-sm md:text-base font-medium italic whitespace-nowrap tracking-widest">
+                                    <span className="text-sm italic font-medium tracking-widest md:text-base whitespace-nowrap">
                                         Alan Kay
                                     </span>
                                     <div className="flex-1 max-w-[180px] h-px bg-white/[0.45]"></div>
@@ -55,16 +55,16 @@ export default function OurTechnologies() {
             {/* ============ MAIN CONTENT ============ */}
             <div className="relative z-[3] w-full max-w-container mx-auto px-page mt-8 md:mt-12 flex flex-col-reverse gap-10 md:flex-row md:items-center md:gap-8 lg:gap-16">
                 {/* Text + tech grid — left at md+, right-aligned */}
-                <div className="flex flex-col gap-4 lg:gap-5 flex-1 text-right">
+                <div className="flex flex-col flex-1 gap-4 text-right lg:gap-5">
                     <h2 className="tracking-[6px] font-thin text-lg md:text-xl uppercase">
-                        OUR <span className="text-accent-pink font-bold">TECHNOLOGIES</span>
+                        OUR <span className="font-bold text-accent-pink">TECHNOLOGIES</span>
                     </h2>
 
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl leading-tight font-bold">
+                    <h3 className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
                         Foundation of the Digital Future
                     </h3>
 
-                    <p className="text-sm md:text-base text-fg-muted leading-relaxed lg:max-w-prose lg:ml-auto">
+                    <p className="text-sm leading-relaxed md:text-base text-fg-muted lg:max-w-prose lg:ml-auto">
                         We Build Digital Solutions Using Modern Technology To Drive
                         Business Efficiency And Growth. Powered By Top Technology Stacks
                         Like Laravel, React, Redis, MySQL, And Docker.
@@ -73,30 +73,37 @@ export default function OurTechnologies() {
                     {/* Tech grid — 2 cols always, last card centered (5 items, lone in last row) */}
                     <div className="grid grid-cols-2 gap-4 w-full mt-2 md:max-w-[640px] md:ml-auto">
                         {technologies.map((tech, index) => (
-                            <GlassCard
-                                key={index}
-                                className="!w-full !rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 last:col-span-2 last:max-w-[calc(50%-0.5rem)] last:justify-self-center"
-                            >
-                                <div className="flex items-center gap-3 p-4">
-                                    <div className="size-12 flex justify-center items-center rounded-xl flex-shrink-0">
-                                        <img loading="lazy" decoding="async"
-                                            src={tech.icon}
-                                            alt={tech.name}
-                                            className="max-w-full h-auto"
-                                        />
-                                    </div>
-                                    <span className="flex-1 text-sm md:text-base font-semibold text-center">
-                                        {tech.name}
-                                    </span>
-                                </div>
-                            </GlassCard>
+                            <div
+  key={index}
+  className="!w-full !rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 last:col-span-2 last:max-w-[calc(50%-0.5rem)] last:justify-self-center"
+  style={{
+    background: "rgba(255, 255, 255, 0.08)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    border: "1px solid rgba(255, 255, 255, 0.15)",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+  }}
+>
+  <div className="flex items-center gap-3 p-4">
+    <div className="flex items-center justify-center flex-shrink-0 size-12 rounded-xl">
+      <img loading="lazy" decoding="async"
+        src={tech.icon}
+        alt={tech.name}
+        className="h-auto max-w-full"
+      />
+    </div>
+    <span className="flex-1 text-sm font-semibold text-center md:text-base">
+      {tech.name}
+    </span>
+  </div>
+</div>
                         ))}
                     </div>
                 </div>
 
                 {/* Hexagon glow logo — smaller at mobile */}
                 <div className="flex justify-center flex-shrink-0">
-                    <div className="relative flex justify-center items-center">
+                    <div className="relative flex items-center justify-center">
                         {/* Radial glow behind logo */}
                         <div
                             className="absolute size-[200px] md:size-[360px] lg:size-[440px] rounded-full blur-[40px] pointer-events-none"

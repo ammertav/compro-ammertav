@@ -73,58 +73,59 @@ export default function ProductSection() {
               className="snap-start flex-shrink-0 w-[300px] sm:w-[400px] md:w-[480px] lg:w-[calc((100%-2.5rem)/1.5)]"
             >
               {/* GlassCard — fills article. h-full + items-stretch → uniform height across cards, content always visible */}
-              <GlassCard
-                className="!w-full !h-full overflow-hidden transition-transform duration-300 hover:-translate-y-1.5 hover:scale-[1.02]"
-                blur={4}
-                backgroundColor="#000000"
-                backgroundOpacity={0.3}
-                borderSize={1}
-                borderOpacity={0.15}
-                borderRadius={24}
-                brightness={100}
-              >
-                <div className="relative flex flex-row h-full gap-4 p-5 overflow-hidden md:p-6">
-                  {/* Inner radial glow — purple accent */}
-                  <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
-                    style={{ background: innerCardGlow }}
-                  />
+              <div
+  className="!w-full !h-full overflow-hidden transition-transform duration-300 hover:-translate-y-1.5 hover:scale-[1.02]"
+  style={{
+    background: "rgba(0, 0, 0, 0.3)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    border: "1px solid rgba(255, 255, 255, 0.15)",
+    borderRadius: "24px",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+  }}
+>
+  <div className="relative flex flex-row h-full gap-4 p-5 overflow-hidden md:p-6">
+    {/* Inner radial glow — purple accent */}
+    <div
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
+      style={{ background: innerCardGlow }}
+    />
 
-                  {/* Logo — LEFT, vertically centered */}
-                  <div className="relative self-center flex-shrink-0 size-14 md:size-16 lg:size-32 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
-                    <img loading="lazy" decoding="async"
-                      src={item.logo}
-                      alt={item.title}
-                      className="w-[100%] max-w-full h-auto object-contain"
-                    />
-                  </div>
+    {/* Logo — LEFT, vertically centered */}
+    <div className="relative self-center flex-shrink-0 size-14 md:size-16 lg:size-32 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
+      <img loading="lazy" decoding="async"
+        src={item.logo}
+        alt={item.title}
+        className="w-[100%] max-w-full h-auto object-contain"
+      />
+    </div>
 
-                  {/* Content — RIGHT */}
-                  <div className="relative flex flex-col flex-1 min-w-0">
-                    <h4 className="mb-2 text-lg font-bold md:text-xl">
-                      {item.title}
-                    </h4>
+    {/* Content — RIGHT */}
+    <div className="relative flex flex-col flex-1 min-w-0">
+      <h4 className="mb-2 text-lg font-bold md:text-xl">
+        {item.title}
+      </h4>
 
-                    <ul className="flex flex-col gap-1.5 text-xs md:text-base leading-relaxed list-disc list-inside">
-                      {item.desc.map((text, i) => (
-                        <li key={i}>{text}</li>
-                      ))}
-                    </ul>
+      <ul className="flex flex-col gap-1.5 text-xs md:text-base leading-relaxed list-disc list-inside">
+        {item.desc.map((text, i) => (
+          <li key={i}>{text}</li>
+        ))}
+      </ul>
 
-                    {/* LEARN MORE — glass effect via GlassCard */}
-                    <div className="self-end mt-auto transition-transform duration-300 hover:-translate-y-0.5">
-                      <GlassCard className="!rounded-full overflow-hidden">
-                        <button
-                          type="button"
-                          className="px-5 py-2 text-base font-bold tracking-wide text-white bg-transparent border-0 cursor-pointer"
-                        >
-                          LEARN MORE
-                        </button>
-                      </GlassCard>
-                    </div>
-                  </div>
-                </div>
-              </GlassCard>
+      {/* LEARN MORE — glass effect via GlassCard */}
+      <div className="self-end mt-auto transition-transform duration-300 hover:-translate-y-0.5">
+        <GlassCard className="!rounded-full overflow-hidden">
+          <button
+            type="button"
+            className="hidden md:inline-flex items-center justify-center rounded-full text-white font-semibold cursor-pointer transition-all duration-300 bg-gradient-to-r from-brand-purple to-brand-violet text-xs md:px-5 md:py-3 lg:px-6 lg:text-sm hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(157,78,221,0.3)]"
+          >
+            LEARN MORE
+          </button>
+        </GlassCard>
+      </div>
+    </div>
+  </div>
+</div>
             </article>
           ))}
         </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GlassCard, GlassButton, GlassInput } from "react-glass-ui";
+
 
 import faqLogo from "../../../../assets/Faqimage.webp";
 import SectionOrbs from "../../../../components/background/SectionOrbs";
@@ -62,67 +62,111 @@ export default function ConnectUS() {
             </h3>
           </div>
 
-          <GlassCard
-            className="!w-full !rounded-3xl overflow-hidden"
-            borderColor="#ffffff"
-            borderSize={0.5}
-            borderOpacity={0.15}
-            borderRadius={24}
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] items-stretch gap-8 p-6 md:p-8">
-              {/* LEFT — FORM */}
-              <div className="flex flex-col w-full gap-4">
-                <FormField label="Name">
-                  <GlassInput placeholder="Input your name" />
-                </FormField>
+          <div
+  className="!w-full !rounded-3xl overflow-hidden"
+  style={{
+    background: "rgba(255, 255, 255, 0.08)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    border: "0.5px solid rgba(255, 255, 255, 0.15)",
+    borderRadius: "24px",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+  }}
+>
+  <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] items-stretch gap-8 p-6 md:p-8">
+    {/* LEFT — FORM */}
+    <div className="flex flex-col w-full gap-4">
+      <FormField label="Name">
+        <input
+          placeholder="Input your name"
+          className="w-full p-4 text-white border-0 outline-none rounded-2xl placeholder:text-white/50"
+          style={{
+            background: "rgba(255, 255, 255, 0.08)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+          }}
+        />
+      </FormField>
 
-                <FormField label="Phone">
-                  <GlassInput placeholder="Input your phone" />
-                </FormField>
+      <FormField label="Phone">
+        <input
+          placeholder="Input your phone"
+          className="w-full p-4 text-white border-0 outline-none rounded-2xl placeholder:text-white/50"
+          style={{
+            background: "rgba(255, 255, 255, 0.08)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+          }}
+        />
+      </FormField>
 
-                <FormField label="Email">
-                  <GlassInput type="email" placeholder="Input your email" />
-                </FormField>
+      <FormField label="Email">
+        <input
+          type="email"
+          placeholder="Input your email"
+          className="w-full p-4 text-white border-0 outline-none rounded-2xl placeholder:text-white/50"
+          style={{
+            background: "rgba(255, 255, 255, 0.08)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+          }}
+        />
+      </FormField>
 
-                <FormField label="Message">
-                  <textarea
-                    placeholder="Write your message..."
-                    className="w-full min-h-[140px] p-4 rounded-2xl bg-white/10 text-white outline-none border-0 resize-none placeholder:text-white/50"
-                  />
-                </FormField>
+      <FormField label="Message">
+        <textarea
+          placeholder="Write your message..."
+          className="w-full min-h-[140px] p-4 rounded-2xl text-white outline-none border-0 resize-none placeholder:text-white/50"
+          style={{
+            background: "rgba(255, 255, 255, 0.08)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+          }}
+        />
+      </FormField>
 
-                <GlassButton className="!w-full !h-[54px] !rounded-2xl !bg-gradient-to-br !from-[#6d00ff] !to-[#cf00ff] !text-white !font-semibold">
-                  Kirim Via WhatsApp
-                </GlassButton>
-              </div>
+      <button
+        type="button"
+        className="w-full h-[54px] rounded-2xl text-white font-semibold cursor-pointer border-0"
+        style={{
+          background: "linear-gradient(135deg, #6d00ff, #cf00ff)",
+        }}
+      >
+        Kirim Via WhatsApp
+      </button>
+    </div>
 
-              {/* RIGHT — INFO */}
-              <div className="flex flex-col h-full gap-6">
-                <div className="flex flex-col gap-3.5">
-                  <h3 className="text-xl font-bold md:text-2xl">
-                    PT. Pandu Usaha Nusantara
-                  </h3>
-                  <div className="flex flex-col gap-2 text-sm leading-relaxed md:text-base text-fg-muted">
-                    <p>Jl. Kota Semarang, Indonesia</p>
-                    <p>Phone : 082156789101</p>
-                    <p>Email : pausnusantara@gmail.com</p>
-                  </div>
-                </div>
+    {/* RIGHT — INFO */}
+    <div className="flex flex-col h-full gap-6">
+      <div className="flex flex-col gap-3.5">
+        <h3 className="text-xl font-bold md:text-2xl">
+          PT. Pandu Usaha Nusantara
+        </h3>
+        <div className="flex flex-col gap-2 text-sm leading-relaxed md:text-base text-fg-muted">
+          <p>Jl. Kota Semarang, Indonesia</p>
+          <p>Phone : 082156789101</p>
+          <p>Email : pausnusantara@gmail.com</p>
+        </div>
+      </div>
 
-                <div className="w-full mt-auto">
-                  <iframe
-                    title="maps"
-                    src="https://www.google.com/maps?q=Semarang&output=embed"
-                    loading="lazy"
-                    className="w-full h-[220px] border-0 rounded-2xl block"
-                  />
-                  <p className="mt-2.5 text-sm text-white leading-relaxed">
-                    Jl. Simongan No 24 RinginTelu, Semarang
-                  </p>
-                </div>
-              </div>
-            </div>
-          </GlassCard>
+      <div className="w-full mt-auto">
+        <iframe
+          title="maps"
+          src="https://www.google.com/maps?q=Semarang&output=embed"
+          loading="lazy"
+          className="w-full h-[220px] border-0 rounded-2xl block"
+        />
+        <p className="mt-2.5 text-sm text-white leading-relaxed">
+          Jl. Simongan No 24 RinginTelu, Semarang
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
 
         {/* FAQ */}

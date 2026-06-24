@@ -1,4 +1,3 @@
-import { GlassCard } from "react-glass-ui";
 import useDragScroll from "../../../../hooks/useDragScroll";
 import SectionOrbs from "../../../../components/background/SectionOrbs";
 import { ORB_CONFIG } from "../../../../components/background/orbConfig";
@@ -57,22 +56,31 @@ export default function ServiceWorks() {
               key={index}
               className="snap-start flex-shrink-0 w-[260px] md:w-[280px] lg:w-full"
             >
-              <GlassCard className="!w-full !h-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]">
-                <div className="relative min-h-[220px] md:min-h-[240px] overflow-hidden flex flex-col justify-center text-center p-6">
-                  {/* Inner radial glow */}
-                  <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
-                    style={{ background: innerCardGlow }}
-                  />
+              <div
+  className="!w-full !h-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]"
+  style={{
+    background: "rgba(255, 255, 255, 0.08)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    border: "1px solid rgba(255, 255, 255, 0.15)",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+  }}
+>
+  <div className="relative min-h-[220px] md:min-h-[240px] overflow-hidden flex flex-col justify-center text-center p-6">
+    {/* Inner radial glow */}
+    <div
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
+      style={{ background: innerCardGlow }}
+    />
 
-                  <h4 className="relative mb-3 text-lg font-bold md:text-xl">
-                    {step.title}
-                  </h4>
-                  <p className="relative text-xs leading-relaxed md:text-sm text-fg-muted">
-                    {step.desc}
-                  </p>
-                </div>
-              </GlassCard>
+    <h4 className="relative mb-3 text-lg font-bold md:text-xl">
+      {step.title}
+    </h4>
+    <p className="relative text-xs leading-relaxed md:text-sm text-fg-muted">
+      {step.desc}
+    </p>
+  </div>
+</div>
             </article>
           ))}
         </div>

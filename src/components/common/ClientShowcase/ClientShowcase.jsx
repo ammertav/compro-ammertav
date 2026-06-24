@@ -1,4 +1,3 @@
-import { GlassCard } from "react-glass-ui";
 import useDragScroll from "../../../hooks/useDragScroll";
 
 const innerCardGlow =
@@ -69,14 +68,14 @@ export default function ClientShowcase({
         {/* HEADER — left-aligned at all viewports */}
         <div className="flex flex-col gap-4 lg:gap-5 max-w-[760px] text-left items-start">
           <h2 className="tracking-[6px] font-thin text-lg md:text-xl uppercase">
-            WHY <span className="text-accent-pink font-bold">CHOOSE US</span>
+            WHY <span className="font-bold text-accent-pink">CHOOSE US</span>
           </h2>
 
-          <h3 className="text-2xl md:text-3xl lg:text-4xl leading-tight font-bold">
+          <h3 className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
             OUR CLIENT SUCCESS STORIES!
           </h3>
 
-          <p className="text-sm md:text-base text-fg-muted leading-relaxed lg:max-w-prose">
+          <p className="text-sm leading-relaxed md:text-base text-fg-muted lg:max-w-prose">
             We are your trusted partner in innovative and reliable software
             development. With modern technology, expert teams, and a
             business-focused approach, we are ready to deliver the best digital
@@ -104,29 +103,32 @@ export default function ClientShowcase({
               </div>
 
               {/* GlassCard */}
-              <GlassCard
-                className="!w-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]"
-                {...(showCardBorder && {
-                  borderColor: "#ffffff",
-                  borderSize: 0.5,
-                  borderOpacity: 0.25,
-                  borderRadius: 24,
-                })}
-              >
-                <div className="relative min-h-[240px] md:min-h-[280px] overflow-hidden flex flex-col justify-center text-center pt-12 pb-6 px-6">
-                  <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
-                    style={{ background: innerCardGlow }}
-                  />
+              <div
+  className="!w-full !rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02]"
+  style={{
+    background: "rgba(255, 255, 255, 0.08)",
+    backdropFilter: "blur(16px)",
+    WebkitBackdropFilter: "blur(16px)",
+    border: showCardBorder
+      ? "0.5px solid rgba(255, 255, 255, 0.25)"
+      : "1px solid rgba(255, 255, 255, 0.15)",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+  }}
+>
+  <div className="relative min-h-[240px] md:min-h-[280px] overflow-hidden flex flex-col justify-center text-center pt-12 pb-6 px-6">
+    <div
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[60%] blur-2xl pointer-events-none"
+      style={{ background: innerCardGlow }}
+    />
 
-                  <h4 className="relative text-xl md:text-2xl font-bold mb-2 md:mb-3">
-                    {client.title}
-                  </h4>
-                  <p className="relative text-xs md:text-sm text-fg-muted leading-relaxed">
-                    {client.description}
-                  </p>
-                </div>
-              </GlassCard>
+    <h4 className="relative mb-2 text-xl font-bold md:text-2xl md:mb-3">
+      {client.title}
+    </h4>
+    <p className="relative text-xs leading-relaxed md:text-sm text-fg-muted">
+      {client.description}
+    </p>
+  </div>
+</div>
             </div>
           ))}
         </div>
