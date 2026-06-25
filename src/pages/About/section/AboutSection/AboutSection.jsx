@@ -45,46 +45,45 @@ export default function AboutSection() {
       {/* CONTENT */}
       <div className="relative z-[2] pt-24 md:pt-56 pb-12 md:pb-24">
         {/* MAIN GRID */}
-        <div className="w-full max-w-container mx-auto px-page grid grid-cols-1 items-center gap-10 md:grid-cols-[auto_1fr] md:gap-8 lg:gap-16">
-          {/* Robot */}
-          <div className="flex justify-center flex-shrink-0 md:justify-start">
-            <img
-              loading="lazy"
-              decoding="async"
-              src={robotImg}
-              alt="robot"
-              className="w-64 h-auto max-w-full md:w-48 lg:w-80"
-            />
-          </div>
+  {/* MAIN GRID */}
+<div className="flex flex-col items-center w-full gap-10 mx-auto text-center max-w-container px-page md:flex-row md:justify-between md:items-center md:text-left">
 
-          {/* Text */}
-          <div className="flex flex-col items-start gap-4 lg:gap-5 max-md:bg-ink/40 max-md:backdrop-blur-sm max-md:rounded-2xl max-md:p-5">
-            <h2 className="tracking-[6px] font-thin text-lg md:text-xl uppercase">
-              ABOUT <span className="font-bold text-accent-pink">US</span>
-            </h2>
+  {/* Robot — mepet kiri */}
+  <div className="flex-shrink-0">
+    <img
+      loading="lazy"
+      decoding="async"
+      src={robotImg}
+      alt="robot"
+      className="w-64 h-auto max-w-full md:w-48 lg:w-80"
+    />
+  </div>
 
-            <h3 className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
-              WHAT IS AMMERTAV?
-            </h3>
+  {/* Text — mepet kanan, text align kiri */}
+  <div className="flex flex-col items-start text-left gap-4 md:max-w-[55%] lg:max-w-[60%]">
+    <h2 className="tracking-[6px] font-thin text-lg md:text-xl uppercase">
+      ABOUT <span className="font-bold text-accent-pink">US</span>
+    </h2>
+    <h3 className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
+      WHAT IS AMMERTAV?
+    </h3>
+    <p className="text-sm leading-relaxed md:text-base lg:max-w-prose">
+      AMMERTAV is a software house focused on building innovative,
+      scalable, and future-ready digital solutions. We help businesses
+      grow through modern web and mobile applications.
+    </p>
+    <p className="text-base font-semibold md:text-lg">
+      WE&rsquo;VE SUCCESSFULLY DELIVERED 250+ PROJECTS.
+    </p>
+    <p className="text-sm leading-relaxed md:text-base lg:max-w-prose">
+      We specialize{" "}
+      <span className="font-bold">in full-stack development</span>,
+      cloud technologies, and advanced system integration&mdash;ensuring
+      your business thrives in the digital era.
+    </p>
+  </div>
 
-            <p className="text-sm leading-relaxed md:text-base lg:max-w-prose">
-              AMMERTAV is a software house focused on building innovative,
-              scalable, and future-ready digital solutions. We help businesses
-              grow through modern web and mobile applications.
-            </p>
-
-            <p className="text-base font-semibold md:text-lg">
-              WE&rsquo;VE SUCCESSFULLY DELIVERED 250+ PROJECTS.
-            </p>
-
-            <p className="text-sm leading-relaxed md:text-base lg:max-w-prose">
-              We specialize{" "}
-              <span className="font-bold">in full-stack development</span>,
-              cloud technologies, and advanced system integration&mdash;ensuring
-              your business thrives in the digital era.
-            </p>
-          </div>
-        </div>
+</div>
 
         {/* WORKFLOW */}
         <div

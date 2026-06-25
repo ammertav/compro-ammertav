@@ -26,7 +26,7 @@ export default function About() {
       {/* CONTENT */}
       <div className="relative z-[2] py-16 md:py-8">
         {/* MAIN GRID */}
-        <div className="w-full max-w-container mx-auto px-page grid grid-cols-1 items-center gap-10 md:grid-cols-[auto_1fr] md:gap-8 lg:gap-16">
+        <div className="grid items-center w-full grid-cols-1 gap-10 mx-auto max-w-container px-page md:grid-cols-2 md:gap-8 lg:gap-16">
           {/* Robot — center at mobile, hug column at md+ */}
           <div className="flex justify-center flex-shrink-0 md:justify-start">
             <img loading="lazy" decoding="async"

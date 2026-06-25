@@ -25,7 +25,7 @@ export default {
         container: '1280px',
       },
       spacing: {
-        page: 'clamp(16px, 5vw, 80px)',
+        page: '0px',
         section: 'clamp(64px, 8vw, 120px)',
       },
       screens: {

@@ -12,7 +12,7 @@ export default function ServiceCard({ title, image, desc }) {
     boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
   }}
 >
-  <div data-cursor="view" className="flex justify-between items-center p-[4px]">
+  <div data-cursor="view" className="flex items-center justify-between gap-4 px-4 py-3">
     <div className="flex-shrink-0">
       <img loading="lazy" decoding="async"
         src={image}
