@@ -49,7 +49,7 @@ export default function ClientShowcase({
     >
       {/* Optional top gradient — smooths transition from previous section with dark/image bg */}
       {topGradient && (
-        <div className="absolute inset-x-0 top-0 h-40 z-[1] pointer-events-none bg-gradient-to-b from-black to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-40 z-[1] pointer-events-none" />
       )}
 
       {/* Optional overlay glow — soft radial accents over the section bg.

@@ -51,7 +51,7 @@ const clients = [
 export default function ProductClient() {
   return (
     <section className="relative ..."> {/* harus relative */}
-      <SectionOrbs config={ORB_CONFIG.quote} /> {/* taruh sebagai child PERTAMA */}
+      <SectionOrbs config={ORB_CONFIG.product} /> {/* taruh sebagai child PERTAMA */}
 
       <div className="relative z-[2] ...">
         <ClientShowcase

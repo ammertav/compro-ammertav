@@ -29,9 +29,8 @@ export default function ServiceWorks() {
 
   return (
     // Top transparent so ServiceSection BG can bleed through; gradient fades to bg-ink
-    <section className="relative w-full overflow-hidden py-section">
-      
-      <SectionOrbs config={ORB_CONFIG.tech} /> 
+    <section className="relative w-full py-section">
+        <SectionOrbs config={ORB_CONFIG.serviceNext} />
       <div className="relative z-[2] w-full max-w-container mx-auto px-page">
         {/* HEADER — left-aligned */}
         <div className="flex flex-col gap-4 lg:gap-5 max-w-[760px] text-left items-start">
