@@ -4,7 +4,8 @@ import { ORB_CONFIG } from "../../../../components/background/orbConfig";
 
 import laravel from "../../../../assets/laravel.webp";
 import react from "../../../../assets/react.webp";
-import javascript from "../../../../assets/javascript.webp";
+import flutter from "../../../../assets/flutter.svg";
+import redis from "../../../../assets/redis.svg";
 import mysql from "../../../../assets/mysql.webp";
 import docker from "../../../../assets/docker.webp";
 import codeLogo from "../../../../assets/logotech.webp";
@@ -14,7 +15,8 @@ const technologies = [
     { name: "MYSQL", icon: mysql },
     { name: "REACT", icon: react },
     { name: "DOCKER", icon: docker },
-    { name: "JAVASCRIPT", icon: javascript },
+    { name: "REDIS", icon: redis },
+    { name: "FLUTTER", icon: flutter },
 ];
 
 const hexagonGlow =
@@ -62,20 +64,20 @@ export default function OurTechnologies() {
     </h2>
 
     <h3 className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
-      Foundation of the Digital Future
+      FOUNDATION OF THE DIGITAL FUTURE
     </h3>
 
     <p className="text-sm leading-relaxed md:text-base text-fg-muted lg:max-w-prose lg:ml-auto">
       We Build Digital Solutions Using Modern Technology To Drive
       Business Efficiency And Growth. Powered By Top Technology Stacks
-      Like Laravel, React, Redis, MySQL, And Docker.
+      Like Laravel, React, Flutter, Redis, MySQL, And Docker.
     </p>
 
     <div className="grid grid-cols-2 gap-4 w-full mt-2 md:max-w-[640px] md:ml-auto">
       {technologies.map((tech, index) => (
         <div
           key={index}
-          className="!w-full !rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 last:col-span-2 last:max-w-[calc(50%-0.5rem)] last:justify-self-center"
+          className="!w-full !rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
           style={{
             background: "rgba(255, 255, 255, 0.08)",
             backdropFilter: "blur(16px)",

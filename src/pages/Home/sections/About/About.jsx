@@ -9,9 +9,9 @@ import robotImg from "../../../../assets/aboutRobotHome.webp";
 import hexagon from "../../../../assets/tinyhex.webp";
 
 const steps = [
-  { title: "250+", text: "PROJECT" },
-  { title: "20+", text: "EMPLOYEES" },
-  { title: "75+", text: "CLIENT" },
+  { title: "FAST", text: "DELIVERY" },
+  { title: "SCALABLE", text: "SYSTEMS" },
+  { title: "ONGOING", text: "SUPPORT" },
 ];
 
 const innerGlow = "radial-gradient(circle, rgba(168,85,247,0.25) 0%, transparent 70%)";
@@ -52,7 +52,7 @@ export default function About() {
             </p>
 
             <p className="text-base font-semibold md:text-lg">
-              WE&rsquo;VE SUCCESSFULLY DELIVERED 250+ PROJECTS.
+              We help businesses turn ideas into reliable digital products.
             </p>
 
             <p className="text-sm leading-relaxed md:text-base lg:max-w-prose">
@@ -102,7 +102,7 @@ export default function About() {
       style={{ background: innerGlow }}
     />
 
-    <h3 className="relative mb-2 text-3xl font-bold leading-tight md:text-5xl md:mb-3">
+    <h3 className="relative mb-2 text-2xl font-bold leading-tight md:text3xl md:mb-3">
       {step.title}
     </h3>
     <p className="relative text-xs md:text-sm text-fg-muted leading-relaxed max-w-[22ch]">

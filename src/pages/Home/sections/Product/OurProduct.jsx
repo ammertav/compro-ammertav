@@ -14,21 +14,21 @@ const products = [
     title: "Hries",
     image: product1,
     description:
-      "A modern POS system with multi-store support, real-time transaction tracking, and flexible payment integration.",
+      "An all-in-one HR system that automates payroll, attendance, and employee management.",
   },
   {
     id: 2,
     title: "BePOS",
     image: product2,
     description:
-      "A modern POS system with multi-store support, real-time transaction tracking, and flexible payment integration.",
+      "A modern POS system with multi-branch support, real-time transactions, and flexible payment integration.",
   },
   {
     id: 3,
-    title: "CRM System",
+    title: "Tivro",
     image: product3,
     description:
-      "A complete CRM solution to manage customers, automate workflows, and improve business productivity.",
+      "A collaborative project management system to plan tasks, track progress, and keep teams aligned in real time.",
   },
 ];
 
@@ -50,13 +50,13 @@ export default function OurProduct() {
             </h2>
 
             <h3 className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
-              Your Smart Solution
+              YOUR SMART SOLUTION
             </h3>
 
             <p className="text-sm leading-relaxed md:text-base text-fg-muted lg:max-w-prose lg:ml-auto">
-              We Bring You Innovative Technologies To Support Your
-              Business&mdash;From Modern POS Systems, Ticketing Solutions,
-              And CRM To Professional Websites&mdash;All In One Platform!
+              We bring you innovative technology to support your
+              business&mdash;from HR and payroll systems to modern POS and
+              project management&mdash;all in one place.
             </p>
 
             <Link to="/product" className="self-end inline-flex transition-transform duration-300 hover:-translate-y-0.5">

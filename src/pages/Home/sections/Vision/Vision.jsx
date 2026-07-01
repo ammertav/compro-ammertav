@@ -9,7 +9,7 @@ export default function Vision() {
                 <h3 className="text-sm md:text-xl lg:text-xl">
                     TO BECOME A <b>LEADING TECHNOLOGY SOLUTIONS</b> PROVIDER THAT
                     <b> ACCELERATES</b> BUSINESS DIGITAL <b>TRANSFORMATION</b> THROUGH
-                    <b> INNOVATIVE</b>, EFFICIENT, AND SUSTAINABLE <b>SOLUTIONS</b>.
+                    <b> INNOVATIVE</b>, EFFICIENT, AND SUSTAINABLE <b>TECHNOLOGY</b>.
                 </h3>
             </div>
         </section>

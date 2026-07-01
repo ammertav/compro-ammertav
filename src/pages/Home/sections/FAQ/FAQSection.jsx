@@ -59,10 +59,9 @@ export default function FAQSection() {
           </h3>
 
           <p className="text-sm md:text-base text-fg-muted leading-relaxed lg:max-w-prose">
-            We Are Your Trusted Partner In Innovative And Reliable
-            Software Development. With Modern Technology,
-            Expert Teams, And A Business-Focused Approach,
-            We Are Ready To Deliver The Best Digital Solutions.
+            Have questions before we start? Here are the answers our
+            clients ask most&mdash;about our process, timelines, support,
+            and how we turn your ideas into working solutions.
           </p>
         </div>
 

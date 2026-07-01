@@ -21,15 +21,15 @@ export default function Hero() {
             <div className="relative z-[2] w-full max-w-container mx-auto px-page flex flex-col-reverse items-center text-center gap-4 pt-20 pb-12 md:flex-row md:justify-between md:text-left md:pt-36 md:pb-section">
                 <div className="w-full md:flex-1 md:max-w-[440px] lg:max-w-[760px]">
                     <h1 className="text-base italic leading-loose text-white/95 lg:text-2xl">
-                        <span className="not-italic font-bold">Technology simplifies</span> every aspect of life
-                        Connecting people, accelerating ideas, and turning complex tasks <br />
-                        <span className="not-italic font-bold">into effortless</span> possibilities.
+                        We build technology that <span className="not-italic font-bold">simplifies your business</span>&mdash;connecting
+                        people, accelerating ideas, and turning complex work
+                        <span className="not-italic font-bold"> into effortless</span> results.
                     </h1>
 
                     <Link to="/contact" className="mt-8 inline-flex transition-transform duration-300 hover:-translate-y-0.5">
                         <GlassCard className="!rounded-full overflow-hidden">
                             <span className="hidden md:inline-flex items-center justify-center rounded-full text-white font-semibold cursor-pointer transition-all duration-300 bg-gradient-to-r from-brand-purple to-brand-violet text-xs md:px-5 md:py-3 lg:px-6 lg:text-sm hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(157,78,221,0.3)]">
-                                GET STARTED
+                                START YOUR PROJECT
                             </span>
                         </GlassCard>
                     </Link>
@@ -58,7 +58,7 @@ export default function Hero() {
                     <>Integrating APIs, payment gateways, ERP, CRM, and other <span className="font-bold">business systems</span>.</>
                 } />
                 <ServiceCard title="IT Consulting" image={consulting} desc={
-                    <>Offering technology consulting to <span className="font-bold">support digital transformation</span> and business.</>
+                    <>Offering technology consulting to guide your <span className="font-bold">digital transformation</span> and business growth.</>
                 } />
             </div>
 

@@ -9,38 +9,38 @@ import client5 from "../../../../assets/logofunnevnew.webp";
 const clients = [
   {
     id: 1,
-    title: "Hries",
+    title: "Siti Rahmawati",
     image: client1,
     description:
-      "A modern POS system with multi-store support, real-time transaction tracking, and flexible payment integration.",
+      "“Since switching to Hries, payroll and attendance run on their own. What used to take our HR team days now takes minutes.” — HR Manager, PT Sinar Abadi",
   },
   {
     id: 2,
-    title: "BePOS",
+    title: "Andika Pratama",
     image: client2,
     description:
-      "A modern POS system with multi-store support, real-time transaction tracking, and flexible payment integration.",
+      "“BePOS made running our three outlets effortless. Real-time sales from every branch in a single dashboard.” — Owner, Kopi Nusantara",
   },
   {
     id: 3,
-    title: "CRM System",
+    title: "Budi Santoso",
     image: client3,
     description:
-      "A complete CRM solution to manage customers, automate workflows, and improve business productivity.",
+      "“Tivro keeps our whole team aligned. I can see every project’s progress in real time and nothing slips through.” — Project Lead, Digital Kreasi",
   },
   {
     id: 4,
-    title: "ERP Solution",
+    title: "Dewi Lestari",
     image: client4,
     description:
-      "Integrated enterprise management system for finance, HR, inventory, and operations management.",
+      "“They understood our business from day one and delivered a website that actually brings in customers.” — Founder, Batik Larasati",
   },
   {
     id: 5,
-    title: "Smart Analytics",
+    title: "Rizky Hidayat",
     image: client5,
     description:
-      "Business intelligence dashboard with real-time analytics and advanced reporting capabilities.",
+      "“Professional, responsive, and always on time. Their system integration streamlined our entire workflow.” — Operations Director, Maju Logistik",
   },
 ];
 

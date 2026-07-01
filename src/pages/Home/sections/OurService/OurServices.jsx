@@ -20,17 +20,17 @@ import logo6 from "../../../../assets/logoOS6.webp";
 const steps = [
   {
     title: "BUILD",
-    text: "Lorem ipsum dolor sit amet consectetur. Id elementum quis et tincidunt donec.",
+    text: "We turn your ideas into solid, well-architected systems built on clean, scalable code.",
     image: build,
   },
   {
     title: "INNOVATE",
-    text: "Lorem ipsum dolor sit amet consectetur. Mauris nisi diam arcu pulvinar.",
+    text: "We apply the right modern technology to solve real business problems—not just to follow trends.",
     image: innovation,
   },
   {
     title: "DELIVER",
-    text: "Lorem ipsum dolor sit amet consectetur. Vehicula volutpat blandit.",
+    text: "We ship on time, then support and optimize so your solution performs in the real world.",
     image: deliver,
   },
 ];
@@ -57,7 +57,7 @@ export default function OurServices() {
       </h2>
 
       <h3 className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
-        From Ideas to Digital Solutions
+        FROM IDEAS TO DIGITAL SOLUTIONS
       </h3>
 
       <p className="text-sm leading-relaxed md:text-base lg:max-w-prose">
